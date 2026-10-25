@@ -222,10 +222,41 @@ p{color:var(--txt-2)}
 
 /* ---------- Trilhas ---------- */
 .trilha-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-.trilha-head .num-badge{margin:0;font-size:1.35rem;width:46px;height:46px;display:grid;place-items:center;border:1px solid rgba(139,92,246,.35);border-radius:13px;background:var(--grad-soft);-webkit-background-clip:border-box;background-clip:border-box}
+.trilha-head .ico{margin:0;flex:none;width:46px;height:46px;border-radius:13px}
+.trilha-head .ico svg{width:24px;height:24px;color:var(--violet-2)}
 .card--trilha ul{list-style:none;display:grid;gap:8px;margin-top:12px}
 .card--trilha li{display:flex;gap:10px;font-size:.9rem;color:var(--txt-2)}
 .card--trilha li svg{width:15px;height:15px;flex:none;color:var(--cyan);margin-top:4px}
+.trilha-more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--font-h);font-weight:600;font-size:.9rem;color:var(--cyan)!important}
+.trilha-more svg{width:16px;height:16px;transition:transform .22s ease}
+.trilha-more:hover{text-decoration:none}
+.trilha-more:hover svg{transform:translateX(4px)}
+
+/* ---------- Página de trilha ---------- */
+.trilha-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.trilha-media{padding-top:clamp(8px,2vw,20px)}
+.trilha-media .photo-frame{aspect-ratio:1440/720;border-radius:var(--radius-lg)}
+.trilha-media img{aspect-ratio:1440/720;object-fit:cover}
+.trilha-media figcaption{margin-top:12px;font-size:.82rem;color:var(--muted)}
+.trilha-mid .photo-frame{aspect-ratio:4/3}
+.trilha-mid .photo-frame img{aspect-ratio:4/3;object-fit:cover}
+.trilha-modulos .card h3{font-size:1.06rem}
+.trilha-outras .card{padding:18px 20px}
+.trilha-outras .card h3{font-size:.98rem;margin-bottom:6px}
+.trilha-outras .card p{font-size:.85rem}
+.trilha-outras .ico{width:38px;height:38px;border-radius:11px;margin-bottom:12px}
+.trilha-outras .ico svg{width:19px;height:19px}
+
+/* ---------- Páginas de organizações (empresas, palestras, executivos, escolas) ---------- */
+.org-media .photo-frame{aspect-ratio:16/9;border-radius:var(--radius-lg)}
+.org-media img{aspect-ratio:16/9;object-fit:cover}
+.org-mid .photo-frame{aspect-ratio:4/3}
+.org-mid .photo-frame img{aspect-ratio:4/3;object-fit:cover}
+.org-links{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,24px)}
+.org-links .card{display:flex;flex-direction:column}
+.org-links .card p{font-size:.88rem;flex:1}
+@media (max-width:1200px){.org-links{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:680px){.org-links{grid-template-columns:1fr}}
 
 /* ---------- Passos (como funciona) ---------- */
 .steps{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,22px)}
