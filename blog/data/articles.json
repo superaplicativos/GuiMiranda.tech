@@ -1,5 +1,21 @@
 [
   {
+    "slug": "ia-para-automatizar-tarefas",
+    "url": "blog/ia-para-automatizar-tarefas/",
+    "date": "2026-10-26",
+    "updated": "2026-10-26",
+    "title": "Como usar IA para automatizar tarefas repetitivas e salvar 15 horas na sua semana",
+    "description": "Aprenda a usar ChatGPT, Claude e Gemini para automatizar relatórios, e-mails e processos do dia a dia executivo e recuperar 15 horas por semana. Guia prático.",
+    "category": "IA e Vibe Coding",
+    "tags": ["IA para automatizar tarefas", "ChatGPT", "Claude", "Gemini", "Produtividade", "Automação"],
+    "image": "img/blog/ia-para-automatizar-tarefas-hero.webp",
+    "og": "img/blog/og-ia-para-automatizar-tarefas.jpg",
+    "wordcount": 2499,
+    "readingtime": 12,
+    "trend": "evergreen",
+    "fontes": ["Documentação oficial das ferramentas citadas: ChatGPT (OpenAI), Claude (Anthropic) e Gemini (Google)", "Método e prompts aplicados em mentoria executiva, conforme dados fixos do site em blog/GUIDE-AGENTE.md"]
+  },
+  {
     "slug": "vibe-coding-guia-executivos",
     "url": "blog/vibe-coding-guia-executivos/",
     "date": "2026-10-26",
