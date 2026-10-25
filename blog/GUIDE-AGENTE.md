@@ -10,11 +10,12 @@ Referencia viva: os artigos ja publicados em `blog/*/index.html` sao exemplos va
 
 ```
 blog/
-  index.html          -> listagem dos artigos (o PRIMEIRO card e automaticamente o destaque)
-  _template.html      -> esqueleto do artigo com {{PLACEHOLDERS}} (copie daqui para criar novo post)
-  GUIDE-AGENTE.md     -> este manual
-  data/articles.json  -> indice de artigos em JSON (fonte da verdade do agente)
-  <slug>/index.html   -> cada artigo vive na propria pasta (URL limpa: /blog/<slug>/)
+  index.html            -> listagem dos artigos (o PRIMEIRO card e automaticamente o destaque)
+  _template.html        -> esqueleto do artigo com {{PLACEHOLDERS}} (copie daqui para criar novo post)
+  GUIDE-AGENTE.md       -> este manual
+  data/cronograma.json  -> CRONOGRAMA OFICIAL dos posts (o que publicar a cada dia; somente leitura)
+  data/articles.json    -> indice de artigos em JSON (o que ja foi publicado)
+  <slug>/index.html     -> cada artigo vive na propria pasta (URL limpa: /blog/<slug>/)
 img/blog/
   <slug>-hero.webp / .jpg    -> imagem de capa 2:1 (proporcao 2:1, ex.: 1344x672 ou 1024x512)
   og-<slug>.jpg              -> imagem Open Graph 1200x630 COM tipografia (badge + titulo + subtitulo)
@@ -26,33 +27,42 @@ Regras de ouro (INVIOLAVEIS):
 2. NUNCA edite arquivos fora de: `blog/`, `img/blog/` e o bloco marcado em `sitemap.xml`.
 3. NUNCA remova um artigo da listagem, do sitemap ou do articles.json.
 4. NUNCA faca commit de tokens, senhas ou arquivos `.env`.
-5. Idempotencia: antes de comecar, verifique se ja existe artigo publicado HOJE (procure a data de hoje em `blog/data/articles.json`). Se existir, ABORTE e reporte.
-6. Toda escrita e em pt-BR, sem travessoes (o site usa virgulas, dois-pontos e "|" no lugar de travessoes).
-7. Site esta em GitHub Pages SEM Jekyll (existe .nojekyll). NAO use frontmatter YAML, nao crie pastas iniciando com `_` fora do `blog/_template.html` (que ja existe).
+5. Idempotencia por slug: o post do dia so e publicado se o `slug` programado ainda NAO existir em `blog/data/articles.json`. No maximo 1 artigo por execucao.
+6. O cronograma (`blog/data/cronograma.json`) e somente leitura para o agente: defina a pauta do dia a partir dele, mas NUNCA o edite, reordene ou remova linhas. So o Guilherme muda o cronograma.
+7. Toda escrita e em pt-BR, sem travessoes (o site usa virgulas, dois-pontos e "|" no lugar de travessoes).
+8. Site esta em GitHub Pages SEM Jekyll (existe .nojekyll). NAO use frontmatter YAML, nao crie pastas iniciando com `_` fora do `blog/_template.html` (que ja existe).
 
 ## 2. FLUXO DIARIO (passo a passo)
 
 ### ETAPA 0: Pre-flight
 1. `git pull origin main` (resolva conflitos; se nao conseguir, ABORTE e reporte).
-2. Leia `blog/data/articles.json`: se ja houver artigo com a data de hoje, ABORTE.
-3. Anote os ULTIMOS 5 temas publicados para nao repetir pauta.
-4. Confira a data real do Brasil: `TZ=America/Sao_Paulo date +%F`.
+2. Confira a data real do Brasil: `TZ=America/Sao_Paulo date +%F`.
+3. Leia `blog/data/cronograma.json` (cronograma oficial) e `blog/data/articles.json`.
+4. Calcule o estado do cronograma para HOJE:
+   * entry de hoje: linha de `posts` com `date` = hoje.
+   * pendentes: linhas com `date` no PASSADO cujo `slug` NAO consta em articles.json.
+   * futuros: linhas com `date` depois de hoje.
+5. Escolha do post do dia (ordem estrita):
+   a. Existem pendentes? publique o MAIS ANTIGO (MODO: RECUPERACAO).
+   b. Senao, entry de hoje existe e ainda nao foi publicado? publique-o (MODO: NORMAL).
+   c. Senao, entry de hoje ja foi publicado? ABORTE: "post de hoje ja publicado".
+   d. Senao, existem futuros? ABORTE: "nada programado para hoje".
+   e. Senao, todas as linhas publicadas? ENCERRE pela CONDICAO DE PARADA (secao 6).
 
-### ETAPA 1: Pauta (pesquisa do tema do dia)
-1. Pesquise nas ultimas 24 horas: lancamentos e noticias de IA (OpenAI, Anthropic, Google, Meta, DeepSeek, Z.ai/GLM), vibe coding, agentes, automacao, ferramentas para negocios, KDP/Amazon, LGPD e outros temas das 8 trilhas.
-2. Escolha o tema de maior impacto OU, se o dia estiver morno, um tema evergreen alinhado as trilhas (IA para executivos, vibe coding, SEO/AEO, publicacao com IA...).
-3. O tema DEVE conectar com o valor pratico de dominar IA nos negocios (o objetivo final e converter para a mentoria).
-4. Defina a trilha principal relacionada (IA, Marketing, Presenca, Tecnologia, Gestao, Startups, Juridico, Livros) e a `category` do post (ex.: "IA e Vibe Coding", "Autoria e Livros", "Marketing e Vendas").
-5. Nao repita pauta dos ultimos 5 artigos nem escreva sobre o mesmo fato de dois dias seguidos.
+### ETAPA 1: Pauta do dia (o cronograma manda; NAO pesquise tema)
+1. Do entry escolhido na ETAPA 0, extraia e USE EXATAMENTE: `slug`, `titulo`, `pauta` (angulo do artigo), `categoria`, `trilha_url` (trilha correspondente do site), `prompt_imagem` (base da capa) e `interlink` (artigos para "Leia tambem"). Nao invente slug nem troque o tema.
+2. Busca web e OPCIONAL e so para verificar fatos, numeros, precos e nomes/versoes atuais de ferramentas e modelos citados na pauta. Nunca use busca para escolher outro tema.
+3. Se o angulo colidir com artigo ja publicado (ex.: "vibe coding na pratica" x "guia de vibe coding para executivos"), aprofunde o recorte da pauta e linkue o anterior.
+4. Nos "Leia tambem", use apenas slugs de `interlink` que ja existam em articles.json. Se o Guilherme fornecer uma foto real no dia (anexo na conversa), ela tem PRIORIDADE sobre o `prompt_imagem`.
 
 ### ETAPA 2: Artigo (regras de conteudo)
-- 2.000 a 3.000 palavras, denso e pratico, sem enrolacao.
+- 1.800 a 2.500 palavras, denso e pratico, sem enrolacao.
 - Tom: pragmatico, mao na massa, visionario, levemente provocador, altissima autoridade. Primeira pessoa quando falar do autor ("eu", "na minha mentoria").
 - AEO (Answer Engine Optimization), OBRIGATORIO:
   * O primeiro paragrafo apos o H1 (o `lead`) responde DIRETAMENTE e de forma conclusiva a pergunta central do tema (para ser extraido por ChatGPT, Perplexity, Claude e Google AI Overviews).
-  * Secao final H2 "Perguntas frequentes (FAQ)" com 4 ou 5 perguntas e respostas diretas de 2 a 3 frases.
+  * Secao final H2 "Perguntas frequentes (FAQ)" com 3 a 5 perguntas e respostas diretas de 2 a 3 frases.
   * H2s em forma de pergunta ou resposta direta sempre que couber.
-- CTA da mentoria em DOIS pontos: uma caixa `cta-post` no meio do artigo e o `cta-banner` no final. Mensagem WhatsApp sempre identifica a origem: `Ola, Guilherme! Li o artigo sobre <tema> no blog e quero saber mais sobre a mentoria...` (URL-encoded).
+- CTA da mentoria em DOIS pontos: uma caixa `cta-post` no meio do artigo e o `cta-banner` no final. Cite as Mentorias Executivas (Essencial R$ 3.000 ou Advanced R$ 5.000, ou solucoes sob medida), presencial em Ribeirao Preto e Sao Paulo ou online. Mensagem WhatsApp sempre identifica a origem: `Ola, Guilherme! Li o artigo sobre <tema> no blog e quero saber mais sobre a mentoria...` (URL-encoded).
 - 3 a 6 links internos para paginas do site (trilhas, mentoria, planos, executivos, sobre). NUNCA linke para concorrentes.
 - Factualidade: nao invente numeros, citacoes nem datas. Se nao tiver certeza, escreva qualitativamente ou verifique com busca. Fontes de destaque ficam registradas no articles.json.
 
@@ -97,7 +107,7 @@ Regras de ouro (INVIOLAVEIS):
 - [ ] articles.json continua um JSON valido.
 - [ ] Apos o push, confira ao vivo: a URL do artigo responde HTTP 200 e o card aparece na listagem.
 
-## 3. CATEGORIAS VALIDAS (use uma destas)
+## 3. CATEGORIAS VALIDAS (use uma destas; o cronograma.json ja usa exatamente estes nomes)
 - IA e Vibe Coding
 - Agentes e Automacao
 - Marketing e Vendas
@@ -111,10 +121,18 @@ Regras de ouro (INVIOLAVEIS):
 ## 4. DADOS FIXOS DO SITE (nao inventar)
 - Autor: Guilherme Miranda. Credenciais publicas: 27 anos fundando startups, mais de 1.200 sites e apps entregues, mais de 80 livros publicados na Amazon (mais de 260 obras globais), mentor em IA, marketing e tecnologia.
 - WhatsApp: https://wa.me/5511966161611 (11) 96616-1611.
+- Mentorias Executivas: Essencial R$ 3.000 (ou 12x de R$ 309,38) e Advanced R$ 5.000 (ou 12x de R$ 515,63), a vista ou no Pix, ou solucoes sob medida (valores em `planos.html`).
 - Presencial em Ribeirao Preto e Sao Paulo, online em todo o Brasil.
 - LinkedIn: https://www.linkedin.com/in/desenvolvimentodeaplicativos/
 - URL base do site: https://superaplicativos.github.io/GuiMiranda.tech/
 - Repo GitHub: superaplicativos/GuiMiranda.tech (branch main, GitHub Pages).
 
 ## 5. CRITERIOS DE SUCESSO DO DIA
-Artigo publicado ao vivo + 0 erros de validacao + sitemap atualizado + card na home do blog + CTA WhatsApp identificando a origem. Nenhuma pagina antiga modificada ou quebrada.
+Artigo publicado ao vivo + 0 erros de validacao + sitemap atualizado + card na home do blog + CTA WhatsApp identificando a origem. Nenhuma pagina antiga modificada ou quebrada. O relatorio final informa tambem o PROGRESSO do cronograma (X de N linhas publicadas, por slug).
+
+## 6. CONDICAO DE PARADA (cronograma concluido)
+Quando TODAS as linhas do `cronograma.json` estiverem publicadas (checagem por slug em articles.json):
+1. NAO pesquise temas novos, NAO crie pautas proprias, NAO publique nada alem do programado.
+2. Encerre imprimindo: `CRONOGRAMA CONCLUIDO: <N>/<N> artigos publicados. Aguardando o Guilherme atualizar blog/data/cronograma.json com o proximo ciclo.`
+3. O Guilherme para o agente ao ver essa mensagem. Para um novo ciclo, basta substituir as linhas do cronograma.json (pode editar direto no GitHub, e so um arquivo JSON) e rodar o agente de novo: este manual e o prompt nao mudam.
+4. O mesmo vale para dias fora do cronograma: sem entry para hoje e sem pendentes, o agente NAO escreve nada por conta propria.
