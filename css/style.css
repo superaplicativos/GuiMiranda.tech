@@ -184,7 +184,7 @@ p{color:var(--txt-2)}
 .grid-2{grid-template-columns:repeat(2,1fr)}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 .grid-4{grid-template-columns:repeat(4,1fr)}
-@media (max-width:1020px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:1200px){.grid-4{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:680px){.grid-2,.grid-3{grid-template-columns:1fr}.grid-4{grid-template-columns:1fr}}
 .card{
   background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);
@@ -279,6 +279,8 @@ p{color:var(--txt-2)}
 .plano .price b{font-size:clamp(2.1rem,4vw,2.7rem);font-weight:800;color:#fff;letter-spacing:-.03em}
 .plano .price span{color:var(--muted);font-size:.9rem}
 .plano .price small{display:block;font-size:.78rem;color:var(--muted);margin-top:4px}
+.plano .parcela{margin:0 0 4px;font-size:.88rem;color:var(--txt-2);font-weight:500}
+.plano .parcela b{color:var(--cyan);font-weight:700;letter-spacing:-.01em;white-space:nowrap}
 .plano ul{list-style:none;display:grid;gap:11px;margin:20px 0 26px;flex:1}
 .plano ul li{display:flex;gap:10px;font-size:.95rem;color:var(--txt-2)}
 .plano ul li svg{width:18px;height:18px;flex:none;color:var(--wa);margin-top:3px}
