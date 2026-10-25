@@ -1,0 +1,110 @@
+/* ============================================================
+   Blog GuiMiranda.tech — listagem + página de artigo
+   Carregar DEPOIS de css/style.css (só nas páginas do blog)
+   ============================================================ */
+
+/* ---------- Cartão de post (listagem) ---------- */
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:clamp(16px,2.4vw,24px)}
+.post-card{padding:0;display:flex;flex-direction:column;overflow:hidden}
+.post-thumb{display:block;overflow:hidden;aspect-ratio:16/9;border-bottom:1px solid var(--card-brd)}
+.post-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.post-card:hover .post-thumb img{transform:scale(1.05)}
+.post-body{padding:clamp(18px,2.6vw,26px);display:flex;flex-direction:column;flex:1}
+.post-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:.8rem;color:var(--muted);margin-bottom:10px}
+.post-cat{color:var(--violet-2);font-weight:600;letter-spacing:.02em}
+.post-card h3{font-size:1.14rem;line-height:1.32;margin-bottom:10px}
+.post-card h3 a{color:#fff}
+.post-card h3 a:hover{color:var(--cyan);text-decoration:none}
+.post-excerpt{font-size:.92rem;flex:1}
+.post-more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--font-h);font-weight:600;font-size:.9rem;color:var(--cyan)!important;align-self:flex-start}
+.post-more svg{width:16px;height:16px;transition:transform .22s ease}
+.post-more:hover{text-decoration:none}
+.post-more:hover svg{transform:translateX(4px)}
+
+/* Destaque automático: o PRIMEIRO card da grade é o post mais recente */
+.post-grid > .post-card:first-child{grid-column:1/-1;display:grid;grid-template-columns:1.08fr 1fr}
+.post-grid > .post-card:first-child .post-thumb{height:100%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--card-brd)}
+.post-grid > .post-card:first-child .post-body{padding:clamp(24px,3.4vw,42px)}
+.post-grid > .post-card:first-child h3{font-size:clamp(1.35rem,2.6vw,1.85rem)}
+.post-grid > .post-card:first-child .post-excerpt{font-size:1rem}
+@media (max-width:760px){
+  .post-grid > .post-card:first-child{display:flex}
+  .post-grid > .post-card:first-child .post-thumb{aspect-ratio:16/9;height:auto;border-right:0;border-bottom:1px solid var(--card-brd)}
+}
+
+/* ---------- Página de artigo ---------- */
+.article-hero{padding-top:clamp(8px,2vw,20px)}
+.article-hero .photo-frame{aspect-ratio:2/1;border-radius:var(--radius-lg)}
+.article-hero img{aspect-ratio:2/1;object-fit:cover}
+.article-hero figcaption{margin-top:12px;font-size:.82rem;color:var(--muted)}
+.article-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+
+.prose{max-width:78ch;margin-inline:auto}
+.prose h2[id],.prose h3[id]{scroll-margin-top:96px}
+.toc{scroll-margin-top:96px}
+.prose h2{margin:2.1em 0 .6em;padding-bottom:14px;position:relative;font-size:clamp(1.35rem,2.6vw,1.75rem)}
+.prose h2::after{content:"";position:absolute;left:0;bottom:0;width:58px;height:3px;background:var(--grad);border-radius:2px}
+.prose h2:first-child{margin-top:.4em}
+.prose h3{margin:1.7em 0 .5em}
+.prose p{margin-bottom:1.15em}
+.prose ul,.prose ol{margin:0 0 1.25em;padding-left:22px;display:grid;gap:9px;color:var(--txt-2)}
+.prose li::marker{color:var(--violet-2)}
+.prose strong{color:#fff}
+.prose blockquote{
+  border-left:3px solid var(--violet);background:var(--card);
+  border-radius:0 14px 14px 0;padding:16px 20px;margin:0 0 1.35em;color:var(--txt-2);
+}
+.prose blockquote p:last-child{margin-bottom:0}
+.prose code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.87em;
+  background:var(--surface-2);border:1px solid var(--card-brd);border-radius:7px;padding:2px 7px;color:var(--cyan);
+}
+.prose figure{margin:1.6em 0}
+.prose .table-wrap{margin:1.4em 0}
+
+/* Sumário (índice do artigo) */
+.toc{
+  max-width:78ch;margin:30px auto 0;padding:20px 24px;
+  background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);
+}
+.toc b{
+  display:block;font-family:var(--font-h);font-size:.78rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:12px;
+}
+.toc ol{list-style:none;display:grid;gap:10px;counter-reset:toc}
+.toc li{counter-increment:toc;display:flex;gap:12px;font-size:.95rem;align-items:baseline}
+.toc li::before{content:counter(toc,decimal-leading-zero);font-family:var(--font-h);font-weight:700;font-size:.85rem;color:var(--violet-2)}
+.toc a{color:var(--txt-2)}
+.toc a:hover{color:var(--cyan)}
+
+/* CTA no meio e no fim do artigo */
+.cta-post{
+  max-width:78ch;margin:2.4em auto;border-radius:var(--radius-lg);
+  border:1px solid rgba(34,211,238,.35);
+  background:linear-gradient(120deg,rgba(139,92,246,.14),rgba(34,211,238,.09));
+  padding:clamp(22px,3.6vw,34px);
+  display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;
+}
+.cta-post p{font-size:.95rem;max-width:54ch;flex:1}
+.cta-post p b{color:#fff}
+.cta-post .btn{flex:none}
+@media (max-width:560px){.cta-post .btn{width:100%}}
+
+/* Caixa do autor */
+.author-box{
+  max-width:78ch;margin:2.6em auto 0;display:flex;gap:20px;align-items:center;
+  background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);
+  padding:clamp(20px,3vw,28px);
+}
+.author-box img{width:88px;height:88px;border-radius:20px;object-fit:cover;flex:none;border:1px solid var(--card-brd)}
+.author-box h3{font-size:1.05rem;margin-bottom:6px}
+.author-box p{font-size:.9rem;margin-bottom:12px}
+.author-box p:last-child{margin-bottom:0}
+.author-box .author-links{display:flex;flex-wrap:wrap;gap:14px;font-size:.88rem}
+.author-box .author-links a{color:var(--cyan);font-weight:600}
+@media (max-width:560px){.author-box{flex-direction:column;text-align:center}.author-box .author-links{justify-content:center}}
+
+/* Temas do blog (mini-cards para trilhas) */
+.temas-grid .card{padding:16px 18px}
+.temas-grid .card h3{font-size:.94rem;margin-bottom:4px}
+.temas-grid .card p{font-size:.82rem}

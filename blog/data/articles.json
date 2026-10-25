@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "vibe-coding-guia-executivos",
+    "url": "blog/vibe-coding-guia-executivos/",
+    "date": "2026-10-26",
+    "updated": "2026-10-26",
+    "title": "Vibe Coding: o que é, como funciona e por que muda o seu negócio",
+    "description": "Vibe coding é programar conversando com IA. Guia direto ao ponto: o que é, ferramentas, riscos e como executivos aplicam para criar software em tempo recorde.",
+    "category": "IA e Vibe Coding",
+    "tags": ["Vibe Coding", "Inteligência Artificial", "Agentes de IA", "Guia"],
+    "image": "img/blog/vibe-coding-guia-executivos-hero.webp",
+    "og": "img/blog/og-vibe-coding-guia-executivos.jpg",
+    "wordcount": 2450,
+    "readingtime": 12,
+    "trend": "evergreen",
+    "fontes": ["Post original de Andrej Karpathy sobre vibe coding, fevereiro de 2025"]
+  },
+  {
+    "slug": "canal-dark-x-amazon-kdp-audiolivros",
+    "url": "blog/canal-dark-x-amazon-kdp-audiolivros/",
+    "date": "2026-10-26",
+    "updated": "2026-10-26",
+    "title": "Canal Dark x Amazon KDP: o jogo que realmente paga",
+    "description": "Canal dark exige audiência antes do primeiro real. Na Amazon você começa monetizado: Kindle+, audiolivro com voz virtual e publicação com IA.",
+    "category": "Autoria e Livros",
+    "tags": ["Amazon KDP", "Kindle+", "Audiolivros", "Canal Dark"],
+    "image": "img/blog/canal-dark-x-amazon-kdp-audiolivros-hero.webp",
+    "og": "img/blog/og-canal-dark-x-amazon-kdp-audiolivros.jpg",
+    "wordcount": 2150,
+    "readingtime": 11,
+    "trend": "hot",
+    "fontes": ["Anúncio da Amazon sobre o Kindle+ (antigo Kindle Unlimited) com audiolivros na assinatura", "Artigo original do autor publicado no LinkedIn"]
+  }
+]
