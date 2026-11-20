@@ -1,5 +1,37 @@
 [
   {
+    "slug": "agente-de-ia-banco-responsabilidade",
+    "url": "blog/agente-de-ia-banco-responsabilidade/",
+    "date": "2026-11-20",
+    "updated": "2026-11-20",
+    "title": "Agente de IA no banco: quem paga se ele errar ou for hackeado?",
+    "description": "Agente de IA no banco: Citi e outros bancos dos EUA passam o prejuízo ao cliente. Veja o que muda no Brasil, o que diz a lei e como usar agentes com segurança.",
+    "category": "Agentes e Automacao",
+    "tags": [
+      "agente de ia no banco",
+      "responsabilidade de agentes de ia",
+      "citi agentes de ia",
+      "quem paga se o agente de ia errar",
+      "agentes de ia e segurança bancária",
+      "súmula 479 stj agentes de ia",
+      "lgpd e agentes de ia",
+      "open finance e agentes de ia"
+    ],
+    "image": "img/blog/agente-de-ia-banco-responsabilidade-hero.webp",
+    "og": "img/blog/og-agente-de-ia-banco-responsabilidade.jpg",
+    "wordcount": 2476,
+    "readingtime": 12,
+    "trend": "hot",
+    "fontes": [
+      "Decrypt, 19/11/2026: https://decrypt.co/383677/citi-customers-responsible-ai-banking-agents-rogue-hack",
+      "TFTC, 19/11/2026: https://www.tftc.io/citi-ai-agent-liability-customers-section-h",
+      "Startup Fortune, 18/11/2026: https://startupfortune.com/citi-pnc-and-citizens-tell-customers-they-own-any-loss-an-ai-agent-causes/",
+      "Reuters via CTV News, 18/11/2026: https://www.ctvnews.ca/sci-tech/article/as-meta-bets-big-on-muse-ai-agent-early-safety-mishaps-surface/",
+      "TV Sim Brasil, 20/11/2026: https://tvsimbrasil.com.br/brasil/tecnologia/noticia/2026/11/20/openai-testa-agentes-dots-chatgpt-plus-brasil",
+      "Código de Defesa do Consumidor (art. 14), Súmula 479 do STJ e LGPD (art. 46)"
+    ]
+  },
+  {
     "slug": "checklist-tecnologico-2027",
     "url": "blog/checklist-tecnologico-2027/",
     "date": "2026-10-26",

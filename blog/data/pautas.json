@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "2026-11-20-agentes-ia-bancos",
+    "adicionada_em": "2026-11-20",
+    "noticia": "Citi, PNC e Citizens atualizam contratos e passam ao cliente a responsabilidade por transações feitas por agentes de IA de terceiros",
+    "link": "https://decrypt.co/383677/citi-customers-responsible-ai-banking-agents-rogue-hack",
+    "observacao": "Angulo: quem paga se o agente de IA errar, e como fica no Brasil (CDC, Súmula 479, LGPD, Open Finance)",
+    "origem": "agente",
+    "status": "publicada",
+    "slug": "agente-de-ia-banco-responsabilidade",
+    "publicada_em": "2026-11-20"
+  }
+]
