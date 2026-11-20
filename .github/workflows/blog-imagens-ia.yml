@@ -1,0 +1,53 @@
+name: Blog | imagens por IA
+
+# Gera as capas de IA dos posts que estao "pendente" em blog/data/imagens-fila.json
+# (Pollinations / Flux, gratuito) e faz commit das imagens no proprio repositorio.
+on:
+  push:
+    branches: [main]
+    paths: ["blog/data/imagens-fila.json"]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */3 * * *"   # repescagem a cada 3h, caso a API tenha falhado
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-imagens-ia
+  cancel-in-progress: false
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Dependencias e fontes (Sora + Inter)
+        run: |
+          pip install --quiet pillow
+          mkdir -p .github/fonts
+          curl -sfL -o .github/fonts/Sora.ttf  "https://github.com/google/fonts/raw/main/ofl/sora/Sora%5Bwght%5D.ttf" || true
+          curl -sfL -o .github/fonts/Inter.ttf "https://github.com/google/fonts/raw/main/ofl/inter/Inter%5Bopsz,wght%5D.ttf" || true
+          ls -la .github/fonts
+
+      - name: Gerar imagens pendentes
+        run: python3 .github/scripts/blog_imagens.py fila
+
+      - name: Commit
+        run: |
+          git config user.name  "Gui Miranda"
+          git config user.email "superaplicativos2022@gmail.com"
+          git add img/blog blog/data/imagens-fila.json
+          if git diff --cached --quiet; then echo "Nada para commitar"; exit 0; fi
+          git commit -m "img: capas de IA geradas para o blog"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1
