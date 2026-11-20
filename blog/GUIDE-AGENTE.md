@@ -136,3 +136,23 @@ Quando TODAS as linhas do `cronograma.json` estiverem publicadas (checagem por s
 2. Encerre imprimindo: `CRONOGRAMA CONCLUIDO: <N>/<N> artigos publicados. Aguardando o Guilherme atualizar blog/data/cronograma.json com o proximo ciclo.`
 3. O Guilherme para o agente ao ver essa mensagem. Para um novo ciclo, basta substituir as linhas do cronograma.json (pode editar direto no GitHub, e so um arquivo JSON) e rodar o agente de novo: este manual e o prompt nao mudam.
 4. O mesmo vale para dias fora do cronograma: sem entry para hoje e sem pendentes, o agente NAO escreve nada por conta propria.
+
+---
+
+## 7. MODO PAUTAS DE NOTICIAS (ciclo a partir de 21/11/2026, agente Claude)
+
+Este modo substitui o cronograma.json enquanto ele estiver concluido.
+
+1. FILA DE PAUTAS: `blog/data/pautas.json` (array). O Guilherme manda listas de noticias e elas entram aqui como
+   `{"id": "...", "adicionada_em": "AAAA-MM-DD", "noticia": "titulo ou resumo", "link": "url opcional", "observacao": "angulo opcional", "status": "pendente"}`.
+2. Cada execucao publica 1 artigo: a pauta `pendente` mais antiga. Ao publicar, mude so o `status` dela para `publicada` e registre `slug` e `publicada_em`.
+3. Fila vazia: pesquise as noticias mais relevantes do dia nos temas do site (IA, vibe coding, agentes, marketing e vendas, SEO/AEO/GEO, startups, juridico digital, Amazon KDP) e escolha 1 que ainda nao tenha artigo no blog. Registre essa pauta no pautas.json com `"origem": "agente"` e status `publicada`.
+4. Artigo de noticia: abra a(s) fonte(s), verifique os fatos com busca, e escreva com o angulo pratico do Guilherme (o que muda para o empresario, o executivo, o autor). Cite as fontes no corpo e no campo `fontes` do articles.json. Nunca invente numeros ou declaracoes.
+5. GEO (Generative Engine Optimization): alem do AEO da Etapa 2, inclua definicoes curtas e citaveis, uma tabela ou lista comparativa quando couber, dados com fonte nomeada, e a entidade "Guilherme Miranda" ligada ao tema no texto e no JSON-LD.
+
+## 8. IMAGENS POR IA (pipeline atual)
+
+1. Gere a capa provisoria localmente (sem internet): `python3 .github/scripts/blog_imagens.py provisorio <slug> "<titulo curto OG>" "<subtitulo OG>"`. Ela ja cria os 3 arquivos da Etapa 4.
+2. Adicione no INICIO de `blog/data/imagens-fila.json`: `{"slug": "<slug>", "prompt": "<prompt em ingles, cena de impacto, sem texto>", "og_titulo": "...", "og_sub": "...", "status": "pendente", "tentativas": 0}`.
+3. No push, o workflow `.github/workflows/blog-imagens-ia.yml` gera a capa por IA (Pollinations / Flux, gratuito), sobrescreve as 3 imagens do slug e faz commit sozinho. Ele tambem repesca falhas a cada 3 horas.
+4. Por isso, antes de publicar, sempre `git pull --rebase origin main` (o bot pode ter commitado imagens).
