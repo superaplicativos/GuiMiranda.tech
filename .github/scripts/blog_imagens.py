@@ -163,13 +163,13 @@ def compor_og(img, titulo, sub):
         tam -= 4
     altura_l = int(tam * 1.18)
     fs = fonte_texto(26, 400)
-    y_sub = OG_H - 58
+    y_sub = OG_H - 50
     y = y_sub - 30 - altura_l * len(linhas)
     for ln in linhas:
         d.text((58, y), ln, font=ft, fill=(245, 243, 255, 255))
         y += altura_l
-    d.rectangle([58, y + 2, 132, y + 7], fill=VIOLETA + (255,))
-    d.rectangle([140, y + 2, 168, y + 7], fill=CIANO + (255,))
+    d.rectangle([58, y + 14, 132, y + 19], fill=VIOLETA + (255,))
+    d.rectangle([140, y + 14, 168, y + 19], fill=CIANO + (255,))
     if sub:
         d.text((58, y_sub - 8), sub, font=fs, fill=(205, 200, 230, 255))
     return og.convert("RGB")
