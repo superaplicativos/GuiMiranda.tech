@@ -4,7 +4,8 @@
     "prompt": "Cinematic wide shot of a futuristic bank vault at night, a sleek humanoid AI robot hand reaching toward a glowing holographic payment terminal while a human hand holds a physical golden approval key in the foreground, tense standoff, dramatic violet and cyan neon lighting, volumetric fog, reflections on polished steel, shallow depth of field, ultra detailed, photorealistic, no text, no letters, no logos",
     "og_titulo": "Agente de IA no banco: quem paga?",
     "og_sub": "Bancos dos EUA passam o risco ao cliente. E no Brasil?",
-    "status": "pendente",
-    "tentativas": 0
+    "status": "gerada",
+    "tentativas": 1,
+    "gerada_em": "2026-11-20T19:38:14-03:00"
   }
 ]
