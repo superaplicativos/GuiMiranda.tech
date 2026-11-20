@@ -156,3 +156,4 @@ Este modo substitui o cronograma.json enquanto ele estiver concluido.
 2. Adicione no INICIO de `blog/data/imagens-fila.json`: `{"slug": "<slug>", "prompt": "<prompt em ingles, cena de impacto, sem texto>", "og_titulo": "...", "og_sub": "...", "status": "pendente", "tentativas": 0}`.
 3. No push, o workflow `.github/workflows/blog-imagens-ia.yml` gera a capa por IA (Pollinations / Flux, gratuito), sobrescreve as 3 imagens do slug e faz commit sozinho. Ele tambem repesca falhas a cada 3 horas.
 4. Por isso, antes de publicar, sempre `git pull --rebase origin main` (o bot pode ter commitado imagens).
+5. Fontes de imagem do workflow, em ordem: Cloudflare Workers AI FLUX.1 schnell (secrets `CF_ACCOUNT_ID` e `CF_API_TOKEN`), Pollinations com chave (secret `POLLINATIONS_TOKEN`) e, por ultimo, Pollinations anonimo (qualidade menor, marca d'agua cortada).

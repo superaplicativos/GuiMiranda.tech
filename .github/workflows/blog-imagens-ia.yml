@@ -37,6 +37,10 @@ jobs:
           ls -la .github/fonts
 
       - name: Gerar imagens pendentes
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          POLLINATIONS_TOKEN: ${{ secrets.POLLINATIONS_TOKEN }}
         run: python3 .github/scripts/blog_imagens.py fila
 
       - name: Commit

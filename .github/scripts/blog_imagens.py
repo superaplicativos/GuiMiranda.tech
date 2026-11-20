@@ -193,10 +193,72 @@ def salvar(slug, hero_img, og_titulo, og_sub):
         os.path.join(IMG_DIR, f"og-{slug}.jpg"), "JPEG", quality=86, optimize=True, progressive=True)
 
 
-# ---------------------------------------------------------------- IA (Pollinations)
-def gerar_ia(prompt, seed):
+# ---------------------------------------------------------------- IA
+# Ordem de preferencia (usa a primeira que tiver credencial e responder):
+#   1) Cloudflare Workers AI, FLUX.1 schnell (secrets CF_ACCOUNT_ID + CF_API_TOKEN), gratis no plano free
+#   2) Pollinations com chave gratis (secret POLLINATIONS_TOKEN), Flux sem marca d'agua
+#   3) Pollinations anonimo (ultimo recurso; a faixa inferior com a marca d'agua e cortada)
+def _cloudflare(prompt, seed):
+    conta, token = os.environ.get("CF_ACCOUNT_ID"), os.environ.get("CF_API_TOKEN")
+    if not (conta and token):
+        return None
+    import base64
+    url = f"https://api.cloudflare.com/client/v4/accounts/{conta}/ai/run/@cf/black-forest-labs/flux-1-schnell"
+    corpo = json.dumps({"prompt": prompt + ESTILO, "steps": 8, "seed": seed}).encode()
+    req = urllib.request.Request(url, data=corpo, method="POST", headers={
+        "Authorization": f"Bearer {token}", "Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        resp = json.loads(r.read())
+    b64 = (resp.get("result") or {}).get("image")
+    if not b64:
+        raise RuntimeError(f"Cloudflare sem imagem: {str(resp)[:200]}")
+    img = Image.open(io.BytesIO(base64.b64decode(b64)))
+    img.load()
+    print(f"  ok: Cloudflare FLUX {img.size}")
+    return img
+
+
+def _pollinations_token(prompt, seed):
+    token = os.environ.get("POLLINATIONS_TOKEN")
+    if not token:
+        return None
     p = urllib.parse.quote(prompt + ESTILO, safe="")
+    for u in (f"https://gen.pollinations.ai/image/{p}?width={HERO_W}&height={HERO_H}&model=flux&nologo=true&seed={seed}",
+              f"https://image.pollinations.ai/prompt/{p}?width={HERO_W}&height={HERO_H}&model=flux&nologo=true&seed={seed}"):
+        try:
+            req = urllib.request.Request(u, headers={"Authorization": f"Bearer {token}",
+                                                     "User-Agent": "GuiMiranda.tech-blog-bot/1.0"})
+            with urllib.request.urlopen(req, timeout=180) as r:
+                img = Image.open(io.BytesIO(r.read()))
+                img.load()
+            print(f"  ok: Pollinations com chave {img.size}")
+            return img
+        except Exception as e:
+            print(f"  Pollinations com chave falhou: {str(e)[:120]}")
+    return None
+
+
+def gerar_ia(prompt, seed):
+    for fonte in (_cloudflare, _pollinations_token):
+        try:
+            img = fonte(prompt, seed)
+            if img is not None:
+                return img
+        except Exception as e:
+            print(f"  {fonte.__name__} falhou: {str(e)[:200]}")
+    img = _pollinations_anonimo(prompt, seed)
+    w, h = img.size
+    return img.crop((0, 0, w, int(h * 672 / 736)))  # remove a faixa com a marca d'agua
+
+
+def _pollinations_anonimo(prompt, seed):
+    p = urllib.parse.quote(prompt + ESTILO, safe="")
+    HERO_H_ = 736  # gera mais alto para cortar a marca d'agua no rodape
     urls = [
+        f"https://image.pollinations.ai/prompt/{p}?width={HERO_W}&height={HERO_H_}&model=flux&nologo=true&enhance=true&seed={seed}",
+        f"https://gen.pollinations.ai/image/{p}?width={HERO_W}&height={HERO_H_}&model=flux&nologo=true&seed={seed}",
+    ]
+    _nao_usado = [
         f"https://image.pollinations.ai/prompt/{p}?width={HERO_W}&height={HERO_H}&model=flux&nologo=true&enhance=true&seed={seed}",
         f"https://image.pollinations.ai/prompt/{p}?width={HERO_W}&height={HERO_H}&nologo=true&seed={seed}",
         f"https://gen.pollinations.ai/image/{p}?width={HERO_W}&height={HERO_H}&model=flux&nologo=true&seed={seed}",
