@@ -5,7 +5,8 @@
     "og_titulo": "Google AI Mode: e o seu SEO?",
     "og_sub": "A busca virou conversa. Veja o que fazer agora",
     "status": "pendente",
-    "tentativas": 0
+    "tentativas": 1,
+    "erro": "Pollinations indisponivel: HTTP Error 401: Unauthorized"
   },
   {
     "slug": "agente-de-ia-banco-responsabilidade",
