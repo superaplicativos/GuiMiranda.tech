@@ -9,5 +9,16 @@
     "status": "publicada",
     "slug": "agente-de-ia-banco-responsabilidade",
     "publicada_em": "2026-11-20"
+  },
+  {
+    "id": "2026-11-21-google-ai-mode-home",
+    "adicionada_em": "2026-11-21",
+    "noticia": "Google libera barra lateral do AI Mode na página inicial do desktop (19/11) e conversas temporárias no AI Mode (17/11); relatos de retirada do botão Pesquisa Google",
+    "link": "https://blog.google/products-and-platforms/products/search/temporary-threads-ai-mode/",
+    "observacao": "Angulo: o que muda no SEO, AEO e GEO de empresas e negócios locais",
+    "origem": "agente",
+    "status": "publicada",
+    "slug": "google-ai-mode-seo-negocios",
+    "publicada_em": "2026-11-21"
   }
 ]

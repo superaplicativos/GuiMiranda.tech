@@ -1,5 +1,40 @@
 [
   {
+    "slug": "google-ai-mode-seo-negocios",
+    "url": "blog/google-ai-mode-seo-negocios/",
+    "date": "2026-11-21",
+    "updated": "2026-11-21",
+    "title": "Google AI Mode na home: o que muda no SEO do seu negócio",
+    "description": "Google AI Mode ganhou barra lateral na home e conversas temporárias. Veja o que mudou em novembro de 2026 e o plano prático para seu negócio seguir no Google.",
+    "category": "SEO, AEO e Presenca Digital",
+    "tags": [
+      "google ai mode",
+      "ai mode do google",
+      "barra lateral do ai mode",
+      "conversas temporárias ai mode",
+      "seo para ai mode",
+      "como aparecer no ai mode do google",
+      "aeo e geo para empresas",
+      "busca por ia e seo local"
+    ],
+    "image": "img/blog/google-ai-mode-seo-negocios-hero.webp",
+    "og": "img/blog/og-google-ai-mode-seo-negocios.jpg",
+    "wordcount": 2438,
+    "readingtime": 12,
+    "trend": "hot",
+    "fontes": [
+      "Google Blog, 17/11/2026: https://blog.google/products-and-platforms/products/search/temporary-threads-ai-mode/",
+      "Digital Trends, 19/11/2026: https://www.digitaltrends.com/computing/google-search-is-starting-to-look-a-lot-like-a-chatbot-app/",
+      "The Decoder, 20/11/2026: https://the-decoder.com/googles-latest-homepage-update-pushes-its-search-engine-further-toward-an-ai-answer-engine",
+      "ShiftDelete (citando Android Authority), 21/11/2026: https://shiftdelete.net/en/google-homepage-drops-search-button-ai-sidebar",
+      "TechCrunch, 18/11/2026: https://techcrunch.com/2026/11/18/googles-ai-feature-in-search-gets-its-own-incognito-mode/",
+      "The Next Web, 10/08/2026: https://thenextweb.com/news/google-ai-first-homepage-test-search-button-signed-out",
+      "PC Guide, 10/08/2026: https://www.pcguide.com/pro/news-pro/google-begins-rolling-out-ai-focused-homepage-ditches-search-button-to-make-room-for-tools-like-image-generation/",
+      "Tom's Guide, 11/08/2026: https://www.tomsguide.com/ai/after-25-years-googles-iconic-search-button-is-disappearing-at-least-for-some-users",
+      "LovedByAI, 15/11/2026: https://www.lovedby.ai/blog/ai-search-news-november-2026"
+    ]
+  },
+  {
     "slug": "agente-de-ia-banco-responsabilidade",
     "url": "blog/agente-de-ia-banco-responsabilidade/",
     "date": "2026-11-20",
