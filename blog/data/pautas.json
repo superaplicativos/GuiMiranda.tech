@@ -31,5 +31,16 @@
     "status": "publicada",
     "slug": "black-friday-2026-com-ia",
     "publicada_em": "2026-11-22"
+  },
+  {
+    "id": "2026-11-23-gemini-computer-use-mac",
+    "adicionada_em": "2026-11-23",
+    "noticia": "Google lança computer use no app do Gemini para Mac (19/11): a IA opera apps, arquivos e sites numa janela isolada; só EUA, inglês, planos AI Plus, Pro e Ultra",
+    "link": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+    "observacao": "Angulo: o que muda para empresas brasileiras, riscos (prompt injection, contas logadas, LGPD) e plano de preparacao",
+    "origem": "agente",
+    "status": "publicada",
+    "slug": "gemini-computer-use-mac",
+    "publicada_em": "2026-11-23"
   }
 ]
