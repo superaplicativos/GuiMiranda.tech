@@ -4,8 +4,9 @@
     "prompt": "Cinematic wide shot of a futuristic digital gateway at night, a tall translucent humanoid AI figure made of violet and cyan light being recognized and allowed through a glowing hexagonal firewall shield into a bright luxurious virtual store, while generic dark robot silhouettes are held back outside behind the barrier, rain-slick reflective ground, volumetric fog, dramatic neon rim lighting, shallow depth of field, ultra detailed, photorealistic, no text, no letters, no numbers, no logos, no brand marks",
     "og_titulo": "Google-Agent: libere o agente de IA do Google",
     "og_sub": "CDN, firewall e robots.txt sem perder vendas",
-    "status": "pendente",
-    "tentativas": 0
+    "status": "gerada",
+    "tentativas": 1,
+    "gerada_em": "2026-11-24T06:07:19-03:00"
   },
   {
     "slug": "gemini-computer-use-mac",
