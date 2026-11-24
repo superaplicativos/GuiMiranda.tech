@@ -1,5 +1,39 @@
 [
   {
+    "slug": "google-agent-liberar-acesso",
+    "url": "blog/google-agent-liberar-acesso/",
+    "date": "2026-11-24",
+    "updated": "2026-11-24",
+    "title": "Google-Agent: como liberar o agente de IA do Google no seu site",
+    "description": "Google-Agent é o agente de IA do Google que navega e compra pelo usuário. Veja como liberar o acesso no seu site, CDN e firewall sem abrir brecha para robôs.",
+    "category": "SEO, AEO e Presenca Digital",
+    "tags": [
+      "google-agent",
+      "google-agent robots.txt",
+      "como liberar o google-agent",
+      "agente de ia do google no site",
+      "user-triggered-agents.json",
+      "web bot auth google",
+      "bloqueio de bots e agentes de ia",
+      "seo para agentes de ia",
+      "geo e aeo para e-commerce"
+    ],
+    "image": "img/blog/google-agent-liberar-acesso-hero.webp",
+    "og": "img/blog/og-google-agent-liberar-acesso.jpg",
+    "wordcount": 2485,
+    "readingtime": 12,
+    "trend": "hot",
+    "fontes": [
+      "Google, documentação oficial (Allow Google-Agent traffic), 17/11/2026: https://developers.google.com/crawling/docs/crawlers-fetchers/allow-google-agent",
+      "Google, fetchers acionados por usuários: https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers",
+      "Google, crawlers comuns: https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "Search Engine Roundtable (Barry Schwartz), 17/11/2026: https://www.seroundtable.com/google-agent-bot-42559.html",
+      "PPC Land (Luis Rijo), 17/11/2026: https://ppc.land/google-lists-six-ways-sites-still-block-its-ai-agent-after-allowing-it/",
+      "Search Engine Journal (Roger Montti), 23/11/2026: https://www.searchenginejournal.com/google-publishes-guidance-for-google-agent-crawler/598526/",
+      "PPC Land (Luis Rijo), 23/03/2026: https://ppc.land/google-agent-joins-the-crawler-list-as-ai-browsing-gets-an-official-identity/"
+    ]
+  },
+  {
     "slug": "gemini-computer-use-mac",
     "url": "blog/gemini-computer-use-mac/",
     "date": "2026-11-23",

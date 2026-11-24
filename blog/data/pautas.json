@@ -42,5 +42,16 @@
     "status": "publicada",
     "slug": "gemini-computer-use-mac",
     "publicada_em": "2026-11-23"
+  },
+  {
+    "id": "2026-11-24-google-agent",
+    "adicionada_em": "2026-11-24",
+    "noticia": "Google publica guia oficial Allow Google-Agent traffic (17/11) e o Search Engine Journal repercute em 23/11: como CDNs, firewalls e serviços antibot devem liberar o agente de IA do Google que navega e age pelo usuário",
+    "link": "https://www.searchenginejournal.com/google-publishes-guidance-for-google-agent-crawler/598526/",
+    "observacao": "Angulo: como liberar o Google-Agent sem abrir brecha para robôs e sem perder vendas; otimização para agentes como nova camada de SEO, AEO e GEO",
+    "origem": "agente",
+    "status": "publicada",
+    "slug": "google-agent-liberar-acesso",
+    "publicada_em": "2026-11-24"
   }
 ]

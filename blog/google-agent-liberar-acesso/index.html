@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google-Agent: como liberar o agente de IA do Google no seu site | GuiMiranda.tech</title>
+<meta name="description" content="Google-Agent é o agente de IA do Google que navega e compra pelo usuário. Veja como liberar o acesso no seu site, CDN e firewall sem abrir brecha para robôs.">
+<meta name="keywords" content="google-agent, google-agent robots.txt, como liberar o google-agent, agente de ia do google no site, user-triggered-agents.json, web bot auth google, bloqueio de bots e agentes de ia, seo para agentes de ia, geo e aeo para e-commerce">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Guilherme Miranda">
+<meta name="geo.region" content="BR-SP">
+<meta name="geo.placename" content="Ribeirão Preto">
+<meta name="theme-color" content="#05070D">
+<link rel="canonical" href="https://superaplicativos.github.io/GuiMiranda.tech/blog/google-agent-liberar-acesso/">
+<link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Guilherme Miranda | Mentoria em IA, Marketing e Tecnologia">
+<meta property="og:url" content="https://superaplicativos.github.io/GuiMiranda.tech/blog/google-agent-liberar-acesso/">
+<meta property="og:title" content="Google-Agent: como liberar o agente de IA do Google no seu site">
+<meta property="og:description" content="Google-Agent é o agente de IA do Google que navega e compra pelo usuário. Veja como liberar o acesso no seu site, CDN e firewall sem abrir brecha para robôs.">
+<meta property="og:image" content="https://superaplicativos.github.io/GuiMiranda.tech/img/blog/og-google-agent-liberar-acesso.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cena cinematográfica de um portão digital futurista à noite, com uma figura humanoide de IA feita de luz violeta e ciano sendo liberada por um escudo de firewall translúcido para entrar numa loja virtual iluminada, enquanto robôs genéricos ficam barrados do lado de fora.">
+<meta property="article:published_time" content="2026-11-24T07:00:00-03:00">
+<meta property="article:modified_time" content="2026-11-24T07:00:00-03:00">
+<meta property="article:author" content="Guilherme Miranda">
+<meta property="article:section" content="SEO, AEO e Presenca Digital">
+<meta property="article:tag" content="google-agent">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Google-Agent: como liberar o agente de IA do Google no seu site">
+<meta name="twitter:description" content="Google-Agent é o agente de IA do Google que navega e compra pelo usuário. Veja como liberar o acesso no seu site, CDN e firewall sem abrir brecha para robôs.">
+<meta name="twitter:image" content="https://superaplicativos.github.io/GuiMiranda.tech/img/blog/og-google-agent-liberar-acesso.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/blog.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://superaplicativos.github.io/GuiMiranda.tech/blog/google-agent-liberar-acesso/#artigo",
+      "headline": "Google-Agent: como liberar o agente de IA do Google no seu site",
+      "description": "Google-Agent é o agente de IA do Google que navega e compra pelo usuário. Veja como liberar o acesso no seu site, CDN e firewall sem abrir brecha para robôs.",
+      "image": "https://superaplicativos.github.io/GuiMiranda.tech/img/blog/og-google-agent-liberar-acesso.jpg",
+      "datePublished": "2026-11-24T07:00:00-03:00",
+      "dateModified": "2026-11-24T07:00:00-03:00",
+      "inLanguage": "pt-BR",
+      "wordCount": 2485,
+      "articleSection": "SEO, AEO e Presenca Digital",
+      "keywords": "google-agent, google-agent robots.txt, como liberar o google-agent, agente de ia do google no site, user-triggered-agents.json, web bot auth google, bloqueio de bots e agentes de ia, seo para agentes de ia, geo e aeo para e-commerce",
+      "author": {
+        "@type": "Person",
+        "@id": "https://superaplicativos.github.io/GuiMiranda.tech/#person",
+        "name": "Guilherme Miranda",
+        "url": "https://superaplicativos.github.io/GuiMiranda.tech/sobre.html",
+        "jobTitle": "Mentor e consultor em tecnologia, IA e marketing digital"
+      },
+      "publisher": { "@id": "https://superaplicativos.github.io/GuiMiranda.tech/#person" },
+      "about": [{ "@type": "Thing", "name": "Google-Agent" }, { "@type": "Thing", "name": "Agentes de IA" }, { "@type": "Thing", "name": "Otimização para agentes, SEO, AEO e GEO" }],
+      "mentions": [{ "@type": "Organization", "name": "Google", "url": "https://www.google.com/" }, { "@type": "WebPage", "name": "Allow Google-Agent traffic", "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/allow-google-agent" }],
+      "isBasedOn": ["https://developers.google.com/crawling/docs/crawlers-fetchers/allow-google-agent", "https://www.seroundtable.com/google-agent-bot-42559.html", "https://www.searchenginejournal.com/google-publishes-guidance-for-google-agent-crawler/598526/", "https://ppc.land/google-lists-six-ways-sites-still-block-its-ai-agent-after-allowing-it/"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://superaplicativos.github.io/GuiMiranda.tech/blog/google-agent-liberar-acesso/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://superaplicativos.github.io/GuiMiranda.tech/blog/google-agent-liberar-acesso/#faq",
+      "mainEntity": [{"@type": "Question", "name": "O que é o Google-Agent?", "acceptedAnswer": {"@type": "Answer", "text": "É o nome usado pelos agentes de IA hospedados na infraestrutura do Google quando navegam na web e executam ações a pedido de um usuário, como pesquisar, filtrar, colocar no carrinho e reservar. Ele está na lista oficial de fetchers acionados por usuários do Google desde março de 2026."}},{"@type": "Question", "name": "O Google-Agent respeita o robots.txt?", "acceptedAnswer": {"@type": "Answer", "text": "Em geral, não. Segundo o Google, fetchers acionados por usuários geralmente ignoram o robots.txt porque a visita foi pedida por uma pessoa. O controle desse tráfego fica no CDN, no firewall e nas regras do próprio site."}},{"@type": "Question", "name": "Como liberar o Google-Agent no meu site?", "acceptedAnswer": {"@type": "Answer", "text": "Crie uma regra de prioridade alta que aceite requisições com Google-Agent no User-Agent e IP presente no arquivo oficial user-triggered-agents.json, valide a assinatura Web Bot Auth quando houver e pule CAPTCHAs e desafios para esse tráfego verificado, em toda a jornada de compra."}},{"@type": "Question", "name": "Liberar o Google-Agent deixa o site vulnerável a robôs?", "acceptedAnswer": {"@type": "Answer", "text": "Não, se a liberação for verificada. O User-Agent pode ser falsificado, por isso o Google recomenda checar também o IP na lista oficial e, quando presente, a assinatura criptográfica. Liberar apenas pelo nome é que abre brecha."}},{"@type": "Question", "name": "Qual a diferença entre Googlebot e Google-Agent?", "acceptedAnswer": {"@type": "Answer", "text": "O Googlebot rastreia páginas automaticamente para indexá-las na Busca e segue o robots.txt. O Google-Agent entra no site porque um usuário pediu uma tarefa e executa ações, como buscar, filtrar, comprar ou reservar."}}]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://superaplicativos.github.io/GuiMiranda.tech/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superaplicativos.github.io/GuiMiranda.tech/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Google-Agent: como liberar o agente de IA do Google no seu site", "item": "https://superaplicativos.github.io/GuiMiranda.tech/blog/google-agent-liberar-acesso/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="../../js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="header">
+  <div class="container header__in">
+    <a class="brand" href="../../index.html" aria-label="GuiMiranda.tech, página inicial">
+      <span class="brand__mark" aria-hidden="true">GM</span>
+      <span class="brand__name">GuiMiranda<small>.tech</small></span>
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="../../index.html#para-quem">Para quem</a>
+      <a href="../../sobre.html">Sobre</a>
+      <a href="../../mentoria.html">Trilhas</a>
+      <a href="../../empresas.html">Empresas</a>
+      <a href="../../planos.html">Planos</a>
+      <a href="../">Blog</a>
+      <a href="../../faq.html">FAQ</a>
+      <a href="../../contato.html">Contato</a>
+    </nav>
+    <div class="header__cta">
+      <a class="btn btn-ghost btn--sm" href="tel:+5511966161611">(11) 96616-1611</a>
+      <a class="btn btn-whats btn--sm" href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+o+Google-Agent+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+presen%C3%A7a+digital+e+IA." rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Comprar agora
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menu" aria-controls="nav-main">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ============ HERO DO ARTIGO ============ -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Trilha de navegação">
+      <a href="../../index.html">Início</a>
+      <span aria-hidden="true">/</span>
+      <a href="../">Blog</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Google-Agent no seu site</span>
+    </nav>
+    <p class="eyebrow">SEO, AEO e Presenca Digital</p>
+    <h1>Google-Agent: como <span class="grad-text">liberar o agente de IA do Google</span> no seu site</h1>
+    <p class="lead">Para liberar o Google-Agent no seu site, crie no CDN, no firewall ou no serviço antibot uma regra de prioridade máxima que aceite requisições cujo User-Agent contenha "Google-Agent" e cujo IP esteja na lista oficial user-triggered-agents.json do Google, valide a assinatura Web Bot Auth quando ela vier e pule CAPTCHAs e desafios para esse tráfego verificado. Esse é o roteiro que o próprio Google publicou em 17 de novembro de 2026, e quem não fizer isso corre o risco de barrar o agente de IA que pesquisa, filtra, coloca no carrinho e reserva em nome do cliente.</p>
+    <div class="article-meta">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><time datetime="2026-11-24">24 de novembro de 2026</time></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Leitura de ~12 min</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>Google-Agent e agentes de IA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMAGEM DE CAPA ============ -->
+<section class="section--tight">
+  <div class="container">
+    <figure class="article-hero">
+      <div class="photo-frame">
+        <picture>
+          <source srcset="../../img/blog/google-agent-liberar-acesso-hero.webp" type="image/webp">
+          <img src="../../img/blog/google-agent-liberar-acesso-hero.jpg" width="1344" height="672" alt="Cena cinematográfica de um portão digital futurista à noite, com uma figura humanoide de IA feita de luz violeta e ciano sendo liberada por um escudo de firewall translúcido para entrar numa loja virtual iluminada, enquanto robôs genéricos ficam barrados do lado de fora." fetchpriority="high">
+        </picture>
+      </div>
+      <figcaption>O Google-Agent age em nome do usuário: a regra certa no firewall deixa o agente entrar e mantém os robôs comuns do lado de fora. Imagem gerada por IA.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <nav class="toc" aria-label="Sumário do artigo">
+      <b>Neste artigo você vai ver</b>
+      <ol>
+        <li><a href="#o-que-mudou">O que o Google publicou sobre o Google-Agent?</a></li>
+        <li><a href="#definicoes">O que é o Google-Agent e qual a diferença para o Googlebot?</a></li>
+        <li><a href="#robots">O Google-Agent respeita o robots.txt?</a></li>
+        <li><a href="#por-que-importa">Por que bloquear o Google-Agent pode custar vendas?</a></li>
+        <li><a href="#como-verificar">Como saber se uma visita do Google-Agent é legítima?</a></li>
+        <li><a href="#seis-erros">Quais são os seis erros que ainda bloqueiam o agente?</a></li>
+        <li><a href="#comparativo">Googlebot, Google-Extended e Google-Agent: qual a diferença?</a></li>
+        <li><a href="#plano">Qual o plano de 7 passos para liberar o Google-Agent?</a></li>
+        <li><a href="#visao">O que isso antecipa para o SEO, o AEO e o GEO em 2027?</a></li>
+        <li><a href="#resumo">Resumo em uma frase</a></li>
+        <li><a href="#faq">Perguntas frequentes</a></li>
+      </ol>
+    </nav>
+    <div class="prose mt-4">
+      <p>Eu passei a última semana testando sites de clientes com uma pergunta simples: se um agente de IA chegar aqui para comprar, ele consegue passar da porta? Em boa parte dos casos, a resposta foi não, e o culpado não era o conteúdo nem o SEO, era o firewall. Neste artigo eu explico o que o Google publicou, com as fontes oficiais, traduzo o jargão técnico para quem decide e entrego o plano que eu aplicaria hoje numa loja virtual, num negócio local ou num SaaS brasileiro.</p>
+
+<h2 id="o-que-mudou">O que o Google publicou sobre o Google-Agent?</h2>
+<p>No dia 17 de novembro de 2026, o Google publicou na documentação da sua infraestrutura de rastreamento um guia técnico chamado <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/allow-google-agent" rel="noopener" target="_blank">"Allow Google-Agent traffic"</a> (algo como "Permita o tráfego do Google-Agent"). A novidade foi noticiada no mesmo dia por Barry Schwartz no <a href="https://www.seroundtable.com/google-agent-bot-42559.html" rel="noopener" target="_blank">Search Engine Roundtable</a> e por Luis Rijo no <a href="https://ppc.land/google-lists-six-ways-sites-still-block-its-ai-agent-after-allowing-it/" rel="noopener" target="_blank">PPC Land</a>, e ganhou nova repercussão em 23 de novembro com a análise de Roger Montti no <a href="https://www.searchenginejournal.com/google-publishes-guidance-for-google-agent-crawler/598526/" rel="noopener" target="_blank">Search Engine Journal</a>.</p>
+<p>O documento ensina donos de sites e times de infraestrutura a reconhecer o Google-Agent e a deixá-lo passar pelas barreiras antirrobô sem desligar a segurança. O texto oficial diz que liberar o agente explicitamente no CDN, no WAF ou no serviço de detecção de bots ajuda a evitar que requisições legítimas sejam bloqueadas, preservando os controles de segurança que já existem.</p>
+<p>O nome não é novo. Segundo o <a href="https://ppc.land/google-agent-joins-the-crawler-list-as-ai-browsing-gets-an-official-identity/" rel="noopener" target="_blank">PPC Land</a>, o Google incluiu o Google-Agent na lista oficial de seus fetchers acionados por usuários em 20 de março de 2026, e na época citou o Project Mariner, seu projeto experimental de agente de navegação, como exemplo. O que mudou agora é o tom: o Google deixou de apenas informar que o agente existe e passou a explicar, passo a passo, como garantir que ele não seja barrado.</p>
+
+<h2 id="definicoes">O que é o Google-Agent e qual a diferença para o Googlebot?</h2>
+<p>Três definições curtas resolvem a confusão:</p>
+<ul>
+<li><b>Googlebot</b> é o rastreador automático que visita páginas para indexá-las na Busca. Ele decide sozinho o que visitar e segue as regras do robots.txt.</li>
+<li><b>Fetcher acionado por usuário</b> é uma visita que o Google faz porque uma pessoa pediu algo naquele momento, e não por rotina de rastreamento.</li>
+<li><b>Google-Agent</b> é, nas palavras da <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/allow-google-agent" rel="noopener" target="_blank">documentação oficial</a>, o nome usado por agentes hospedados na infraestrutura do Google para navegar na web e executar ações a pedido do usuário.</li>
+</ul>
+<p>A diferença prática é brutal. O Googlebot lê a sua página para decidir se ela aparece numa busca. O Google-Agent entra no seu site para fazer alguma coisa: usar a busca interna, aplicar filtros, abrir a página de detalhe do produto, colocar no carrinho, fazer uma reserva e chamar as APIs que o site usa por trás das telas, como as chamadas XHR, GraphQL e os endereços api.*, conforme a lista de ações do guia resumida pelo <a href="https://www.searchenginejournal.com/google-publishes-guidance-for-google-agent-crawler/598526/" rel="noopener" target="_blank">Search Engine Journal</a>.</p>
+<p>Em outras palavras, o Googlebot é o leitor e o Google-Agent é o assistente do cliente. Bloquear um cliente na porta custa bem mais do que bloquear um leitor.</p>
+
+<h2 id="robots">O Google-Agent respeita o robots.txt?</h2>
+<p>De modo geral, não, e isso é intencional. A <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers" rel="noopener" target="_blank">página do Google sobre fetchers acionados por usuários</a> afirma que, como a busca foi solicitada por um usuário, esses fetchers geralmente ignoram as regras do robots.txt. É a lógica de um navegador, que não consulta o robots.txt antes de abrir a página que você digitou.</p>
+<p>Já os rastreadores comuns, segundo a <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers" rel="noopener" target="_blank">lista oficial de crawlers do Google</a>, sempre obedecem ao robots.txt quando rastreiam automaticamente. Por isso, escrever "Disallow" para o Google-Agent no robots.txt não é o caminho para controlar esse tráfego. O controle real fica no CDN, no firewall e na lógica do próprio site.</p>
+<p>Para o empresário, a leitura é: o robots.txt continua importante para o SEO tradicional, mas deixou de ser a única porta.</p>
+
+<h2 id="por-que-importa">Por que bloquear o Google-Agent pode custar vendas?</h2>
+<p>Porque a maior parte dos sites brasileiros que eu audito tem alguma proteção antirrobô ligada no modo padrão: bloqueio de tráfego vindo de data centers, regras gerenciadas de bots, CAPTCHA em formulário, limite de requisições por IP. O agente de IA quebra a lógica dessas proteções: ele é um robô, roda em servidores do Google e age em nome de um humano real que quer comprar.</p>
+<p>Se a sua loja derruba esse tráfego, o agente não consegue concluir a tarefa e o usuário recebe a resposta de que não deu certo. Em geral, o agente tenta o próximo site, e o próximo site é o do seu concorrente. A venda evapora sem aparecer em relatório nenhum.</p>
+<p>O momento torna isso mais urgente. No artigo sobre a <a href="../black-friday-2026-com-ia/">Black Friday 2026 com IA</a>, eu mostrei pesquisas indicando que a maioria dos consumidores pretende usar IA nas compras deste ano. E na semana passada o Google também colocou o <a href="../gemini-computer-use-mac/">Gemini para operar o Mac</a> nos Estados Unidos. A direção é uma só: cada vez mais tarefas de compra vão começar e terminar com um agente no meio.</p>
+
+<div class="cta-post">
+        <p><b>Quer saber se o seu site está barrando agentes de IA sem você perceber?</b> Na trilha de Presença Digital da mentoria, eu reviso com você o CDN, o firewall, o checkout e o SEO, AEO e GEO do site, e deixo tudo pronto para ser encontrado e usado por IA, presencial em Ribeirão Preto e São Paulo ou online.</p>
+        <a class="btn btn-whats" href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+o+Google-Agent+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+presen%C3%A7a+digital+e+IA." rel="noopener" target="_blank">Quero revisar o meu site</a>
+      </div>
+
+<h2 id="como-verificar">Como saber se uma visita do Google-Agent é legítima?</h2>
+<p>Esse é o coração do guia, e é aqui que muita gente erra. Para serviços que não fazem a verificação automaticamente, o Google recomenda quatro checagens, nesta ordem:</p>
+<ol>
+<li><b>Cabeçalho User-Agent.</b> Confirme que o cabeçalho contém o termo Google-Agent.</li>
+<li><b>Endereço IP.</b> Confirme que o IP de origem está no arquivo oficial <a href="https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json" rel="noopener" target="_blank">user-triggered-agents.json</a>, que o Google mantém e atualiza.</li>
+<li><b>Assinatura, quando houver.</b> Se a requisição vier assinada, verifique os cabeçalhos Signature e Signature-Input.</li>
+<li><b>Liberação.</b> Para as requisições verificadas, pule os desafios antibot.</li>
+</ol>
+<p>Dois detalhes técnicos fazem diferença. Primeiro, a própria <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers" rel="noopener" target="_blank">documentação do Google</a> avisa que o User-Agent pode ser falsificado. Liberar só pelo nome é abrir a porta para qualquer robô que se fantasiar de Google, então o IP precisa ser checado junto. Segundo, a posição do termo no texto muda: na versão para celular o identificador aparece no final, dentro de um bloco "compatible", e na versão de desktop ele aparece no meio da string, antes da versão do Chrome. Uma regra escrita para procurar só o final vai deixar passar o desktop.</p>
+<p>O terceiro item é o mais promissor para o futuro. O Google informa que está experimentando o protocolo Web Bot Auth com a identidade https://agent.bot.goog e assinando requisições do Google-Agent com o padrão HTTP Message Signatures, a RFC 9421. Traduzindo: é um crachá criptográfico, muito mais difícil de falsificar do que um nome ou um IP. Como o próprio texto fala em requisições "participantes", nem todas virão assinadas por enquanto, então a assinatura reforça a verificação, mas ainda não substitui o IP.</p>
+
+<h2 id="seis-erros">Quais são os seis erros que ainda bloqueiam o agente?</h2>
+<p>A parte mais útil do guia é a seção de solução de problemas, que o <a href="https://ppc.land/google-lists-six-ways-sites-still-block-its-ai-agent-after-allowing-it/" rel="noopener" target="_blank">PPC Land</a> chamou de "seis maneiras pelas quais sites ainda bloqueiam o agente depois de liberá-lo". Eu li na fonte e traduzo com o meu comentário de quem já configurou isso na prática:</p>
+<ol>
+<li><b>Prioridade da regra.</b> A regra de liberação precisa ser avaliada antes dos bloqueios amplos de ASN de nuvem ou data center, das regras gerenciadas de bots e das políticas que bloqueiam "agentes de IA" como categoria.</li>
+<li><b>Desafios interativos.</b> Não basta evitar o erro HTTP. A regra precisa pular CAPTCHAs e desafios em JavaScript, inclusive widgets de CAPTCHA dentro da página.</li>
+<li><b>Ações dentro da jornada.</b> A liberação tem de valer além da página inicial: busca interna, filtros, páginas de detalhe, carrinho, reserva e as APIs internas.</li>
+<li><b>Limite por IP compartilhado.</b> Requisições de vários usuários diferentes saem do mesmo conjunto de IPs do Google. Um limite de requisições por IP pensado para um humano vai estrangular o agente de muitos clientes ao mesmo tempo.</li>
+<li><b>Atualização das faixas de IP.</b> As regras baseadas em IP precisam acompanhar a versão mais recente do user-triggered-agents.json.</li>
+<li><b>Cabeçalhos no proxy.</b> Balanceadores de carga e proxies precisam preservar o IP original do cliente, o User-Agent e, nas requisições assinadas, os cabeçalhos Signature, Signature-Input e Signature-Agent. Se o proxy descarta isso, o servidor nunca consegue verificar nada.</li>
+</ol>
+
+<h2 id="comparativo">Googlebot, Google-Extended e Google-Agent: qual a diferença?</h2>
+<p>Muita gente mistura os três nomes. A tabela abaixo resume o papel de cada um com base na documentação oficial do Google:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Identificador</th><th>Para que serve</th><th>Segue o robots.txt?</th><th>Onde você controla</th></tr>
+</thead>
+<tbody>
+<tr><td>Googlebot</td><td>Rastrear e indexar páginas para a Busca</td><td>Sim, sempre que rastreia automaticamente</td><td>robots.txt, meta robots, Search Console</td></tr>
+<tr><td>Google-Extended</td><td>Token de controle sobre o uso do conteúdo em modelos de IA generativa do Google</td><td>É ele próprio uma regra de robots.txt</td><td>robots.txt</td></tr>
+<tr><td>Google-Agent</td><td>Navegar e executar ações no site a pedido de um usuário</td><td>Em geral não, por ser acionado pelo usuário</td><td>CDN, WAF, serviço antibot, servidor e regras do próprio site</td></tr>
+</tbody>
+</table>
+</div>
+<p>A leitura executiva é simples: o Googlebot decide se você é encontrado, o Google-Extended decide como o seu conteúdo alimenta a IA, e o Google-Agent decide se a IA consegue fazer negócio com você. A <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers" rel="noopener" target="_blank">página de crawlers do Google</a> ainda adianta que o Google-Extended deve passar a suportar o padrão AIPREF no início de 2027, sinal de que as regras de preferência para IA vão continuar evoluindo.</p>
+
+<h2 id="plano">Qual o plano de 7 passos para liberar o Google-Agent?</h2>
+<p>Este é o roteiro que eu uso com clientes da mentoria. Funciona para loja virtual, site de serviço local, agenda online e SaaS:</p>
+<ol>
+<li><b>Descubra quem protege o seu site.</b> Liste CDN, firewall, plugin de segurança e serviço antibot.</li>
+<li><b>Procure o Google-Agent nos logs.</b> Filtre os acessos que contêm o termo e veja quais receberam bloqueio, desafio ou erro 403 e 429.</li>
+<li><b>Crie a regra de liberação verificada.</b> User-Agent com o termo e IP no arquivo oficial, com prioridade acima dos bloqueios gerais. Se o seu provedor verifica sozinho, ative a opção dele e confira.</li>
+<li><b>Automatize a lista de IPs.</b> Agende a leitura do user-triggered-agents.json em vez de copiar faixas à mão.</li>
+<li><b>Teste a jornada inteira.</b> Busca, filtro, produto, carrinho, formulário e agendamento, incluindo as APIs internas. O agente precisa conseguir completar o mesmo caminho que um cliente.</li>
+<li><b>Defina o que o agente não pode fazer.</b> Liberar acesso não é liberar tudo. Pagamento, login e dados pessoais continuam com as suas regras de segurança e de LGPD, e ações sensíveis podem continuar exigindo confirmação humana.</li>
+<li><b>Deixe o site legível para máquinas.</b> Preço, estoque, frete e prazo claros na página, dados estruturados corretos e botões com rótulo de verdade. Um agente compra melhor onde a informação é inequívoca, e é a mesma base do que eu explico em <a href="../seo-vs-aeo-vs-geo/">SEO vs. AEO vs. GEO</a>.</li>
+</ol>
+
+<h2 id="visao">O que isso antecipa para o SEO, o AEO e o GEO em 2027?</h2>
+<p>Em 27 anos fundando startups e mais de 1.200 sites e apps entregues, eu aprendi a ler esse tipo de documento técnico como um aviso antecipado. Quando o Google se dá ao trabalho de ensinar o mercado a não bloquear o seu agente, é porque esse agente vai gerar tráfego relevante.</p>
+<p>Eu chamo essa nova camada de <b>otimização para agentes</b>: não basta ser encontrado (SEO), nem ser citado nas respostas da IA (AEO e GEO). Em 2027, o seu site também vai precisar ser executável por uma IA, ou seja, permitir que um agente complete uma compra, uma reserva ou um orçamento do começo ao fim. O guia do Google-Agent é o primeiro manual oficial dessa disciplina, e ele começa pelo básico: não bata a porta na cara do agente.</p>
+<p>Como escrevi sobre o <a href="../google-ai-mode-seo-negocios/">Google AI Mode na página inicial</a>, a busca está virando conversa, e a conversa está virando ação. Quem ajustar a infraestrutura agora sai na frente.</p>
+
+<h2 id="resumo">Resumo em uma frase</h2>
+<p>O Google-Agent é o agente de IA do Google que navega e age nos sites a pedido do usuário, geralmente sem seguir o robots.txt, e o guia publicado em 17 de novembro de 2026 mostra que a forma segura de não perder essas visitas é liberar no CDN e no firewall só o tráfego verificado por User-Agent, IP oficial e assinatura, em toda a jornada de compra.</p>
+<p>Se você quer fazer essa revisão com acompanhamento, conheça a <a href="../../trilha-presenca.html">trilha de Presença Digital</a>, a <a href="../../trilha-ia.html">trilha de IA aplicada ao negócio</a>, as <a href="../../mentoria.html">trilhas da mentoria</a>, os <a href="../../planos.html">planos e preços</a> ou leia mais <a href="../../sobre.html">sobre o meu trabalho</a>.</p>
+
+      <p>Para montar o contexto completo deste tema, leia também:</p>
+      <ul>
+        <li><a href="../google-ai-mode-seo-negocios/">Google AI Mode na home: o que muda no SEO do seu negócio</a></li>
+        <li><a href="../seo-vs-aeo-vs-geo/">SEO vs. AEO vs. GEO: como fazer seu negócio ser encontrado no ChatGPT e no Google</a></li>
+        <li><a href="../black-friday-2026-com-ia/">Black Friday 2026 com IA: como vender quando a IA escolhe</a></li>
+      </ul>
+
+
+      <h2 id="faq">Perguntas frequentes (FAQ)</h2>
+      <div class="faq">
+        <details>
+          <summary>O que é o Google-Agent?</summary>
+          <div class="a"><p>É o nome usado pelos agentes de IA hospedados na infraestrutura do Google quando navegam na web e executam ações a pedido de um usuário, como pesquisar, filtrar, colocar no carrinho e reservar. Ele está na lista oficial de fetchers acionados por usuários do Google desde março de 2026.</p></div>
+        </details>
+        <details>
+          <summary>O Google-Agent respeita o robots.txt?</summary>
+          <div class="a"><p>Em geral, não. Segundo o Google, fetchers acionados por usuários geralmente ignoram o robots.txt porque a visita foi pedida por uma pessoa. O controle desse tráfego fica no CDN, no firewall e nas regras do próprio site.</p></div>
+        </details>
+        <details>
+          <summary>Como liberar o Google-Agent no meu site?</summary>
+          <div class="a"><p>Crie uma regra de prioridade alta que aceite requisições com Google-Agent no User-Agent e IP presente no arquivo oficial user-triggered-agents.json, valide a assinatura Web Bot Auth quando houver e pule CAPTCHAs e desafios para esse tráfego verificado, em toda a jornada de compra.</p></div>
+        </details>
+        <details>
+          <summary>Liberar o Google-Agent deixa o site vulnerável a robôs?</summary>
+          <div class="a"><p>Não, se a liberação for verificada. O User-Agent pode ser falsificado, por isso o Google recomenda checar também o IP na lista oficial e, quando presente, a assinatura criptográfica. Liberar apenas pelo nome é que abre brecha.</p></div>
+        </details>
+        <details>
+          <summary>Qual a diferença entre Googlebot e Google-Agent?</summary>
+          <div class="a"><p>O Googlebot rastreia páginas automaticamente para indexá-las na Busca e segue o robots.txt. O Google-Agent entra no site porque um usuário pediu uma tarefa e executa ações, como buscar, filtrar, comprar ou reservar.</p></div>
+        </details>
+      </div>
+
+      <aside class="author-box">
+        <img src="../../img/gui-hero.webp" alt="Guilherme Miranda, mentor de IA, marketing e tecnologia" width="88" height="88">
+        <div>
+          <h3>Escrito por Guilherme Miranda</h3>
+          <p>Mentor e consultor em tecnologia, IA e marketing digital. 27 anos fundando startups, mais de 1.200 sites e apps entregues e mais de 80 livros publicados na Amazon. Presencial em Ribeirão Preto e São Paulo, online em todo o Brasil.</p>
+          <div class="author-links">
+            <a href="../../sobre.html">Sobre o mentor</a>
+            <a href="https://www.linkedin.com/in/desenvolvimentodeaplicativos/" rel="noopener" target="_blank">LinkedIn</a>
+            <a href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+o+Google-Agent+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+presen%C3%A7a+digital+e+IA." rel="noopener" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL (obrigatorio em TODO artigo) ============ -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Deixe o seu site pronto para clientes que chegam por IA</h2>
+      <p class="lead">Nas Mentorias Executivas (Essencial R$ 3.000 ou Advanced R$ 5.000, ou soluções sob medida), eu reviso com você o SEO, o AEO e o GEO do site, as regras de CDN e firewall para agentes de IA, a jornada de compra e as regras de LGPD, e acompanho a implementação. Presencial em Ribeirão Preto e São Paulo ou online.</p>
+      <div class="cta-banner__btns">
+        <a class="btn btn-whats btn--lg" href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+o+Google-Agent+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+presen%C3%A7a+digital+e+IA." rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Quero falar com o Guilherme
+        </a>
+        <a class="btn btn-ghost btn--lg" href="../../planos.html">Ver planos e preços</a>
+      </div>
+    </div>
+    <p class="center mt-3"><a class="post-more" href="../">Ver todos os artigos do blog <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="../../index.html" aria-label="GuiMiranda.tech, página inicial">
+          <span class="brand__mark" aria-hidden="true">GM</span>
+          <span class="brand__name">GuiMiranda<small>.tech</small></span>
+        </a>
+        <p>Mentoria em IA, marketing digital, vendas, tecnologia e direito digital para empreendedores, empresários e profissionais liberais. Presencial em Ribeirão Preto e São Paulo e online em todo o Brasil.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="../../index.html">Início</a></li>
+          <li><a href="../../sobre.html">Sobre o mentor</a></li>
+          <li><a href="../../mentoria.html">Trilhas da mentoria</a></li>
+          <li><a href="../../empresas.html">Para empresas</a></li>
+          <li><a href="../../planos.html">Planos e preços</a></li>
+          <li><a href="../">Blog</a></li>
+          <li><a href="../../faq.html">Perguntas frequentes</a></li>
+          <li><a href="../../contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Trilhas</h4>
+        <ul>
+          <li><a href="../../trilha-ia.html">IA aplicada ao negócio</a></li>
+          <li><a href="../../trilha-marketing.html">Marketing e Vendas</a></li>
+          <li><a href="../../trilha-presenca.html">Presença Digital</a></li>
+          <li><a href="../../trilha-tecnologia.html">Tecnologia e Produtividade</a></li>
+          <li><a href="../../trilha-gestao.html">Gestão e Agilidade</a></li>
+          <li><a href="../../trilha-startups.html">Startups</a></li>
+          <li><a href="../../trilha-juridico.html">Jurídico e Direito Digital</a></li>
+          <li><a href="../../trilha-livros.html">Autoria e Livros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <div class="footer__nap">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Ribeirão Preto e São Paulo, SP, Brasil<br>Atendimento online em todo o país</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>WhatsApp: <a href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+o+Google-Agent+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+presen%C3%A7a+digital+e+IA." rel="noopener" target="_blank">(11) 96616-1611</a></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/desenvolvimentodeaplicativos/" rel="noopener" target="_blank">Guilherme Miranda no LinkedIn</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span class="ano">2026</span> Guilherme Miranda · Consultoria e Desenvolvimento em Tecnologia e Marketing Digital.</p>
+      <p>GuiMiranda.tech · <a href="../../index.html">Mentoria IA Ribeirão Preto</a> · <a href="../">Blog</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+o+Google-Agent+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+presen%C3%A7a+digital+e+IA." rel="noopener" target="_blank" aria-label="Falar com Guilherme Miranda no WhatsApp">
+  <span class="sr-wa">Comprar mentoria pelo WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
