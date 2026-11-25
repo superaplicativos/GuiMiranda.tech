@@ -53,5 +53,16 @@
     "status": "publicada",
     "slug": "google-agent-liberar-acesso",
     "publicada_em": "2026-11-24"
+  },
+  {
+    "id": "2026-11-25-ifood-modelos-open-source",
+    "adicionada_em": "2026-11-25",
+    "noticia": "iFood revela que 8 em cada 10 tokens de IA rodam em modelos open source: custo por token caiu 86% desde janeiro e a conta 51%, com uso 30x maior (post de Diego Barreto repercutido pela Mobile Time em 23/11)",
+    "link": "https://www.mobiletime.com.br/noticias/23/11/2026/ifood-modelo-open-source/",
+    "observacao": "Angulo: como empresas reduzem o custo de IA sem racionar acesso, com modelos abertos como padrão, roteamento, governança e LGPD",
+    "origem": "agente",
+    "status": "publicada",
+    "slug": "modelos-open-source-de-ia",
+    "publicada_em": "2026-11-25"
   }
 ]

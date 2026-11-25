@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modelos open source de IA: como o iFood cortou o custo de tokens | GuiMiranda.tech</title>
+<meta name="description" content="Modelos open source de IA já rodam 8 em cada 10 tokens do iFood e o custo por token caiu 86%. Veja como aplicar a mesma estratégia e reduzir o custo de IA.">
+<meta name="keywords" content="modelos open source de ia, ia open source para empresas, como reduzir custo de ia, custo de tokens de ia, ifood modelos open source, modelos de pesos abertos, roteamento de modelos de ia, governança de ia e lgpd, llm open source empresa">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Guilherme Miranda">
+<meta name="geo.region" content="BR-SP">
+<meta name="geo.placename" content="Ribeirão Preto">
+<meta name="theme-color" content="#05070D">
+<link rel="canonical" href="https://superaplicativos.github.io/GuiMiranda.tech/blog/modelos-open-source-de-ia/">
+<link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Guilherme Miranda | Mentoria em IA, Marketing e Tecnologia">
+<meta property="og:url" content="https://superaplicativos.github.io/GuiMiranda.tech/blog/modelos-open-source-de-ia/">
+<meta property="og:title" content="Modelos open source de IA: como o iFood cortou o custo de tokens">
+<meta property="og:description" content="Modelos open source de IA já rodam 8 em cada 10 tokens do iFood e o custo por token caiu 86%. Veja como aplicar a mesma estratégia e reduzir o custo de IA.">
+<meta property="og:image" content="https://superaplicativos.github.io/GuiMiranda.tech/img/blog/og-modelos-open-source-de-ia.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cena cinematográfica de um centro de entregas futurista à noite, com uma frota de pequenas motos de luz violeta e ciano levando cubos luminosos de dados por uma cidade digital, enquanto um único caminhão dourado reluzente segue reservado para a carga mais pesada.">
+<meta property="article:published_time" content="2026-11-25T07:00:00-03:00">
+<meta property="article:modified_time" content="2026-11-25T07:00:00-03:00">
+<meta property="article:author" content="Guilherme Miranda">
+<meta property="article:section" content="Tecnologia e Produtividade">
+<meta property="article:tag" content="modelos open source de ia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Modelos open source de IA: como o iFood cortou o custo de tokens">
+<meta name="twitter:description" content="Modelos open source de IA já rodam 8 em cada 10 tokens do iFood e o custo por token caiu 86%. Veja como aplicar a mesma estratégia e reduzir o custo de IA.">
+<meta name="twitter:image" content="https://superaplicativos.github.io/GuiMiranda.tech/img/blog/og-modelos-open-source-de-ia.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/blog.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://superaplicativos.github.io/GuiMiranda.tech/blog/modelos-open-source-de-ia/#artigo",
+      "headline": "Modelos open source de IA: como o iFood cortou o custo de tokens",
+      "description": "Modelos open source de IA já rodam 8 em cada 10 tokens do iFood e o custo por token caiu 86%. Veja como aplicar a mesma estratégia e reduzir o custo de IA.",
+      "image": "https://superaplicativos.github.io/GuiMiranda.tech/img/blog/og-modelos-open-source-de-ia.jpg",
+      "datePublished": "2026-11-25T07:00:00-03:00",
+      "dateModified": "2026-11-25T07:00:00-03:00",
+      "inLanguage": "pt-BR",
+      "wordCount": 2479,
+      "articleSection": "Tecnologia e Produtividade",
+      "keywords": "modelos open source de ia, ia open source para empresas, como reduzir custo de ia, custo de tokens de ia, ifood modelos open source, modelos de pesos abertos, roteamento de modelos de ia, governança de ia e lgpd, llm open source empresa",
+      "author": {
+        "@type": "Person",
+        "@id": "https://superaplicativos.github.io/GuiMiranda.tech/#person",
+        "name": "Guilherme Miranda",
+        "url": "https://superaplicativos.github.io/GuiMiranda.tech/sobre.html",
+        "jobTitle": "Mentor e consultor em tecnologia, IA e marketing digital"
+      },
+      "publisher": { "@id": "https://superaplicativos.github.io/GuiMiranda.tech/#person" },
+      "about": [{ "@type": "Thing", "name": "Modelos open source de IA" }, { "@type": "Thing", "name": "Custo de tokens de IA generativa" }, { "@type": "Thing", "name": "Governança de IA e LGPD" }],
+      "mentions": [{ "@type": "Organization", "name": "iFood", "url": "https://www.ifood.com.br/" }, { "@type": "Organization", "name": "Zoop" }, { "@type": "Person", "name": "Diego Barreto", "jobTitle": "CEO do iFood" }, { "@type": "Person", "name": "Cesario Martins", "jobTitle": "CEO da Zoop" }, { "@type": "Person", "@id": "https://superaplicativos.github.io/GuiMiranda.tech/#person", "name": "Guilherme Miranda" }],
+      "isBasedOn": ["https://www.mobiletime.com.br/noticias/23/11/2026/ifood-modelo-open-source/", "https://guiadeti.com.br/noticias/modelos-open-source-concentram-tokens-ia-usados-ifood/", "https://tiinside.com.br/10/11/2026/ifood-reduz-em-90-custos-com-tokens-de-ia-revela-ceo-da-zoop/"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://superaplicativos.github.io/GuiMiranda.tech/blog/modelos-open-source-de-ia/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://superaplicativos.github.io/GuiMiranda.tech/blog/modelos-open-source-de-ia/#faq",
+      "mainEntity": [{"@type": "Question", "name": "O que são modelos open source de IA?", "acceptedAnswer": {"@type": "Answer", "text": "São modelos de IA cujos pesos treinados são publicados para download, o que permite rodá-los no próprio servidor, na nuvem escolhida ou por um provedor parceiro. Exemplos de famílias conhecidas são Llama, Qwen, DeepSeek, Mistral e Gemma, cada uma com licença própria que precisa ser lida antes do uso comercial."}}, {"@type": "Question", "name": "Como o iFood reduziu o custo de IA?", "acceptedAnswer": {"@type": "Answer", "text": "Segundo a Mobile Time, o iFood adotou modelos open source como padrão e deixou os modelos premium para tarefas com justificativa e orçamento definido, sem limitar os tokens dos funcionários. Com isso, 8 em cada 10 tokens rodam em modelos abertos, o custo por token caiu 86% desde janeiro de 2026 e a conta caiu 51%."}}, {"@type": "Question", "name": "Modelos open source de IA são tão bons quanto os modelos fechados?", "acceptedAnswer": {"@type": "Answer", "text": "Para tarefas de volume, como resumir, classificar, extrair dados e traduzir, muitas vezes a diferença de qualidade é pequena. Em raciocínio complexo e tarefas críticas, os modelos premium costumam levar vantagem, por isso o ideal é testar com exemplos reais e combinar os dois tipos."}}, {"@type": "Question", "name": "Usar modelos open source é seguro para a LGPD?", "acceptedAnswer": {"@type": "Answer", "text": "Pode ser, desde que a empresa saiba onde o dado é processado, tenha contrato claro com o provedor e aplique regras de acesso e de dados pessoais na própria infraestrutura. Para dados muito sensíveis, rodar o modelo em servidor próprio dá o máximo de controle."}}, {"@type": "Question", "name": "Uma pequena empresa consegue aplicar a estratégia do iFood?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O caminho é inventariar as ferramentas de IA, separar tarefas de volume das críticas, testar um modelo aberto via provedor nas tarefas de volume e criar uma regra simples de roteamento, com o modelo premium como exceção justificada."}}]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://superaplicativos.github.io/GuiMiranda.tech/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superaplicativos.github.io/GuiMiranda.tech/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Modelos open source de IA: como o iFood cortou o custo de tokens", "item": "https://superaplicativos.github.io/GuiMiranda.tech/blog/modelos-open-source-de-ia/" }
+      ]
+    }
+  ]
+}
+</script>
+<script src="../../js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="header">
+  <div class="container header__in">
+    <a class="brand" href="../../index.html" aria-label="GuiMiranda.tech, página inicial">
+      <span class="brand__mark" aria-hidden="true">GM</span>
+      <span class="brand__name">GuiMiranda<small>.tech</small></span>
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="../../index.html#para-quem">Para quem</a>
+      <a href="../../sobre.html">Sobre</a>
+      <a href="../../mentoria.html">Trilhas</a>
+      <a href="../../empresas.html">Empresas</a>
+      <a href="../../planos.html">Planos</a>
+      <a href="../">Blog</a>
+      <a href="../../faq.html">FAQ</a>
+      <a href="../../contato.html">Contato</a>
+    </nav>
+    <div class="header__cta">
+      <a class="btn btn-ghost btn--sm" href="tel:+5511966161611">(11) 96616-1611</a>
+      <a class="btn btn-whats btn--sm" href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+modelos+open+source+de+IA+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+IA+aplicada+ao+neg%C3%B3cio." rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Comprar agora
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menu" aria-controls="nav-main">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ============ HERO DO ARTIGO ============ -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Trilha de navegação">
+      <a href="../../index.html">Início</a>
+      <span aria-hidden="true">/</span>
+      <a href="../">Blog</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Modelos open source de IA</span>
+    </nav>
+    <p class="eyebrow">Tecnologia e Produtividade</p>
+    <h1><span class="grad-text">Modelos open source de IA</span>: como o iFood cortou o custo de tokens</h1>
+    <p class="lead">Modelos open source de IA são a forma mais rápida de reduzir o custo de IA generativa sem cortar o acesso dos funcionários: você coloca um modelo aberto como padrão para as tarefas de volume e reserva os modelos premium, mais caros, para o que realmente exige. Foi o que o iFood fez em 2026. Segundo dados divulgados pelo CEO Diego Barreto em 23 de novembro, 8 em cada 10 tokens do grupo já rodam em modelos open source, o custo por token caiu 86% desde janeiro e a conta recuou 51%, enquanto o consumo de tokens mais que dobrou desde junho.</p>
+    <div class="article-meta">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><time datetime="2026-11-25">25 de novembro de 2026</time></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Leitura de ~12 min</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>IA open source e custo de tokens</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMAGEM DE CAPA ============ -->
+<section class="section--tight">
+  <div class="container">
+    <figure class="article-hero">
+      <div class="photo-frame">
+        <picture>
+          <source srcset="../../img/blog/modelos-open-source-de-ia-hero.webp" type="image/webp">
+          <img src="../../img/blog/modelos-open-source-de-ia-hero.jpg" width="1344" height="672" alt="Cena cinematográfica de um centro de entregas futurista à noite, com uma frota de pequenas motos de luz violeta e ciano levando cubos luminosos de dados por uma cidade digital, enquanto um único caminhão dourado reluzente segue reservado para a carga mais pesada." fetchpriority="high">
+        </picture>
+      </div>
+      <figcaption>O modelo certo para cada tarefa: open source no volume do dia a dia, premium só onde faz diferença. Imagem gerada por IA.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <nav class="toc" aria-label="Sumário do artigo">
+      <b>Neste artigo você vai ver</b>
+      <ol>
+        <li><a href="#o-que-aconteceu">O que o iFood anunciou sobre IA open source?</a></li>
+        <li><a href="#definicoes">O que são modelos open source de IA, afinal?</a></li>
+        <li><a href="#por-que-funciona">Por que trocar o modelo padrão derruba tanto a conta?</a></li>
+        <li><a href="#comparativo">Modelo fechado, open source via API ou servidor próprio: qual escolher?</a></li>
+        <li><a href="#governanca">Como fica a segurança e a LGPD com modelos abertos?</a></li>
+        <li><a href="#cultura">O que o caso iFood ensina além do custo?</a></li>
+        <li><a href="#plano">Como aplicar a estratégia do iFood numa empresa menor?</a></li>
+        <li><a href="#visao">O que isso antecipa para as empresas brasileiras em 2027?</a></li>
+        <li><a href="#resumo">Resumo em uma frase</a></li>
+        <li><a href="#faq">Perguntas frequentes</a></li>
+      </ol>
+    </nav>
+    <div class="prose mt-4">
+      <p>Toda semana alguém me pergunta na mentoria se vale a pena liberar IA para a empresa inteira ou se a conta vai sair do controle. O caso que o iFood tornou público nesta semana é a melhor resposta prática que eu vi em 2026, porque mostra uma empresa brasileira de grande porte multiplicando o uso e reduzindo o gasto ao mesmo tempo. Neste artigo eu explico o que foi divulgado, com as fontes, comparo as rotas possíveis e entrego o roteiro para aplicar a mesma lógica numa empresa menor.</p>
+<h2 id="o-que-aconteceu">O que o iFood anunciou sobre IA open source?</h2>
+<p>Em 23 de novembro de 2026, o CEO do iFood, Diego Barreto, compartilhou no LinkedIn os números do uso de IA generativa dentro do grupo, e a <a href="https://www.mobiletime.com.br/noticias/23/11/2026/ifood-modelo-open-source/" rel="noopener" target="_blank">Mobile Time</a> transformou o post em reportagem no mesmo dia, assinada por Isabel Butcher. O <a href="https://guiadeti.com.br/noticias/modelos-open-source-concentram-tokens-ia-usados-ifood/" rel="noopener" target="_blank">Guia de TI</a> repercutiu os mesmos dados em 25 de novembro.</p>
+<p>Segundo as duas reportagens, o uso de IA no iFood, por meio da Zoop, a empresa de infraestrutura financeira do grupo, cresceu 30 vezes desde janeiro de 2026. O consumo de tokens subiu 106% desde junho, a conta caiu 51% e o custo por token recuou 86% desde janeiro. Hoje, cerca de 8 em cada 10 tokens rodam em modelos open source.</p>
+<p>O que mais me chamou a atenção não foi o número, foi a decisão por trás dele. De acordo com a Mobile Time, quando o uso e a conta começaram a crescer juntos, o iFood escolheu não restringir o acesso dos funcionários. Em vez de racionar, mudou a arquitetura: modelos abertos viraram o padrão, e os modelos premium continuam disponíveis para tarefas que exigem justificativa e têm orçamento definido. Todos os colaboradores seguem com tokens ilimitados, e Barreto credita a virada à plataforma de IA generativa da própria empresa.</p>
+
+<h3>E o número de 90% que apareceu antes?</h3>
+<p>Duas semanas antes, em 10 de novembro, o <a href="https://tiinside.com.br/10/11/2026/ifood-reduz-em-90-custos-com-tokens-de-ia-revela-ceo-da-zoop/" rel="noopener" target="_blank">TI Inside</a> publicou a fala de Cesario Martins, CEO da Zoop, no TI Inside Innovation Forum 2026. Ali, ele contou que o ecossistema do iFood chegou a cerca de 6 trilhões de tokens por mês, que a conta de tokens caiu 90% com mudanças na infraestrutura de IA e que cerca de 8 mil funcionários usam modelos de linguagem.</p>
+<p>Os números não batem entre si, e eu prefiro deixar isso claro em vez de escolher o mais bonito. São porta-vozes diferentes, momentos diferentes e, provavelmente, recortes diferentes (conta total, custo por token, períodos de comparação distintos). As reportagens não explicam a diferença. A conclusão que sobrevive às duas versões é a mesma: o custo caiu muito enquanto o uso explodiu, e a alavanca foi trocar o modelo padrão.</p>
+
+<h2 id="definicoes">O que são modelos open source de IA, afinal?</h2>
+<p>Antes de copiar a estratégia, vale alinhar o vocabulário. Quatro definições curtas resolvem a maior parte da confusão que eu vejo em reunião de diretoria:</p>
+<ul>
+<li><b>Token</b> é a unidade de texto que o modelo lê e escreve, um pedaço de palavra. É por token que a maioria dos provedores cobra, então o token é o "quilowatt-hora" da IA.</li>
+<li><b>Modelo fechado (proprietário)</b> é o modelo que você só acessa pela API ou pelo app do fabricante. Você paga por uso e não controla onde ele roda.</li>
+<li><b>Modelo open source ou de pesos abertos</b> é o modelo cujos pesos, o "cérebro" treinado, são publicados para download. Você pode rodar no seu servidor, na nuvem que escolher ou por meio de um provedor parceiro. Famílias conhecidas incluem Llama, Qwen, DeepSeek, Mistral e Gemma, cada uma com a sua licença.</li>
+<li><b>Roteamento de modelos</b> é a camada que decide, a cada pedido, qual modelo atende. Tarefa simples vai para o modelo barato, tarefa crítica vai para o modelo premium.</li>
+</ul>
+<p>Um cuidado importante: "open source" no mundo da IA nem sempre significa código e dados de treino abertos como no software tradicional. Muitas vezes são só os pesos abertos, com licença que pode ter restrições de uso comercial ou de escala. Ler a licença antes de colocar em produção é obrigação, não detalhe.</p>
+
+<h2 id="por-que-funciona">Por que trocar o modelo padrão derruba tanto a conta?</h2>
+<p>Porque a maior parte do trabalho de IA numa empresa não exige o modelo mais inteligente do mercado. Resumir um e-mail, classificar um chamado, extrair campos de uma nota fiscal, traduzir uma descrição de produto, gerar a primeira versão de um texto: isso é trabalho de volume, repetitivo e bem definido. Cesario Martins disse exatamente isso no evento do TI Inside, segundo a reportagem: nem toda tarefa precisa do modelo mais avançado.</p>
+<p>Eu costumo explicar com uma analogia de logística. Você não manda um caminhão-baú entregar um envelope. O modelo premium é o caminhão, ótimo para carga pesada, caro para tudo o resto. Quando o envelope é a regra e não a exceção, a frota precisa ser de motos. O iFood, que vive de logística, aplicou essa mesma lógica aos tokens.</p>
+<p>Existe um segundo efeito, menos óbvio. Com o modelo barato como padrão, a empresa pode liberar a IA para todo mundo sem medo da fatura. Isso destrava adoção, e adoção é o que gera ganho de produtividade de verdade. Racionar tokens economiza no curto prazo e mata a cultura de uso no médio prazo.</p>
+
+<h2 id="comparativo">Modelo fechado, open source via API ou servidor próprio: qual escolher?</h2>
+<p>Não existe resposta única, existe a combinação certa para cada tarefa. A tabela abaixo resume como eu comparo as três rotas com os meus clientes de mentoria:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Critério</th><th>Modelo fechado premium</th><th>Open source via provedor</th><th>Open source no próprio servidor</th></tr>
+</thead>
+<tbody>
+<tr><td>Custo por tarefa simples</td><td>Mais alto</td><td>Baixo</td><td>Muito baixo em escala, alto em volume pequeno</td></tr>
+<tr><td>Qualidade em raciocínio complexo</td><td>Em geral a melhor</td><td>Boa e variável por modelo</td><td>Boa e variável por modelo</td></tr>
+<tr><td>Controle sobre os dados</td><td>Depende do contrato do fabricante</td><td>Depende do contrato do provedor</td><td>Máximo</td></tr>
+<tr><td>Esforço técnico</td><td>Baixo</td><td>Baixo a médio</td><td>Alto (GPU, operação, atualização)</td></tr>
+<tr><td>Dependência de fornecedor</td><td>Alta</td><td>Média, dá para trocar de provedor</td><td>Baixa</td></tr>
+<tr><td>Melhor uso</td><td>Tarefas críticas e de alto valor</td><td>Volume do dia a dia</td><td>Volume muito alto ou dado muito sensível</td></tr>
+</tbody>
+</table>
+</div>
+<p>Repare que o próprio iFood, segundo o TI Inside, usa as três rotas ao mesmo tempo: amplia os modelos abertos, usa parceiros para rodá-los, desenvolve modelos próprios e reduz a dependência dos fechados, tudo debaixo de uma camada de governança que deixa cada aplicação escolher o modelo. Para uma PME, o ponto de partida mais sensato costuma ser a coluna do meio.</p>
+
+<div class="cta-post">
+        <p><b>Quer saber quanto a sua empresa pode economizar com IA sem cortar o acesso de ninguém?</b> Na trilha de IA aplicada ao negócio da mentoria, eu mapeio com você as tarefas, escolho os modelos certos para cada uma e monto a governança e as regras de LGPD, presencial em Ribeirão Preto e São Paulo ou online.</p>
+        <a class="btn btn-whats" href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+modelos+open+source+de+IA+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+IA+aplicada+ao+neg%C3%B3cio." rel="noopener" target="_blank">Quero reduzir o custo de IA</a>
+      </div>
+
+<h2 id="governanca">Como fica a segurança e a LGPD com modelos abertos?</h2>
+<p>Aqui está o ponto que separa a estratégia do iFood de uma economia irresponsável. Segundo o TI Inside, Cesario Martins lembrou que a Zoop é regulada pelo Banco Central e está sujeita à LGPD, e defendeu que segurança e proteção de dados precisam estar embutidas na própria infraestrutura de IA. Na visão dele, a política tem de ser aplicada nos modelos e nos agentes, e não ficar só como orientação para os funcionários.</p>
+<p>Traduzindo para a sua empresa, três perguntas precisam ter resposta antes de trocar de modelo:</p>
+<ol>
+<li><b>Quais sistemas de IA estão em uso?</b> Inclusive os que alguém da equipe assinou no cartão sem avisar.</li>
+<li><b>Quem tem acesso a quê?</b> Perfis, permissões e quais áreas podem usar os modelos premium.</li>
+<li><b>Que dados passam por cada modelo?</b> Dado pessoal de cliente, dado financeiro e segredo comercial pedem rota própria, contrato claro com o provedor e, às vezes, servidor próprio.</li>
+</ol>
+<p>Rodar um modelo aberto num provedor desconhecido, sem contrato e sem saber em que país o dado é processado, pode sair mais caro do que a economia de tokens. Se você ainda não tem o básico de proteção de dados organizado, comece pelo meu guia de <a href="../lgpd-para-pmes/">LGPD para PMEs</a>. E se a sua operação usa agentes que tomam decisões sozinhos, o artigo sobre <a href="../agente-de-ia-banco-responsabilidade/">quem responde quando o agente de IA erra</a> mostra por que a governança precisa vir antes da escala.</p>
+
+<h2 id="cultura">O que o caso iFood ensina além do custo?</h2>
+<p>O dado mais estratégico da história não é o percentual de economia, é a decisão de manter tokens ilimitados para todos. Segundo a Mobile Time, Barreto reforçou a postura de "IA para todos" e citou bootcamps para milhares de pessoas. No TI Inside, Martins disse que o principal obstáculo à adoção de IA é cultural, e não tecnológico, porque as empresas ainda são organizadas em departamentos e silos.</p>
+<p>Concordo integralmente. Em 27 anos fundando startups e mais de 1.200 sites e apps entregues, eu vi a mesma cena se repetir em toda onda tecnológica: a empresa compra a ferramenta, limita o uso por medo do custo, ninguém aprende de verdade e, seis meses depois, a diretoria conclui que "não funcionou". O iFood fez o inverso. Primeiro democratizou, depois otimizou o custo com engenharia.</p>
+<p>Martins também descreveu, segundo a reportagem, três ondas de adoção: primeiro os times de tecnologia, depois os processos internos e, por fim, os produtos que mudam a experiência do cliente, ondas que podem acontecer ao mesmo tempo. É um bom mapa para qualquer empresa se localizar.</p>
+
+<h2 id="plano">Como aplicar a estratégia do iFood numa empresa menor?</h2>
+<p>Você não precisa de 6 trilhões de tokens por mês para colher o mesmo benefício. Este é o roteiro de sete passos que eu uso na mentoria, adaptado para empresas de pequeno e médio porte:</p>
+<ol>
+<li><b>Faça o inventário.</b> Liste todas as ferramentas e APIs de IA que a empresa paga, quem usa e para quê. Some a conta mensal real.</li>
+<li><b>Classifique as tarefas.</b> Separe o que é volume (resumir, classificar, extrair, traduzir, rascunhar) do que é crítico (decisão jurídica, análise financeira, código em produção, texto final para cliente).</li>
+<li><b>Teste um modelo aberto nas tarefas de volume.</b> Pegue 50 exemplos reais de cada tarefa, rode no modelo atual e num modelo aberto via provedor, e compare a qualidade às cegas.</li>
+<li><b>Defina o padrão e a exceção.</b> Modelo aberto como padrão, premium sob justificativa e com orçamento por área, exatamente a regra descrita pelo iFood.</li>
+<li><b>Crie a camada de roteamento.</b> Pode ser simples: uma automação ou um gateway de modelos que manda cada tipo de pedido para o modelo certo e registra o consumo. Isso também evita ficar preso a um único fornecedor.</li>
+<li><b>Embuta a governança.</b> Regras de dados pessoais, contratos com provedores, registro de quem usa o quê. Política escrita no sistema, não só no manual.</li>
+<li><b>Libere e treine.</b> Com o custo sob controle, libere a IA para todo mundo e invista em treinamento prático. É o treinamento que transforma token em produtividade.</li>
+</ol>
+<p>Se a sua dúvida é qual modelo escolher para cada tarefa, o meu <a href="../comparativo-de-llms/">comparativo de LLMs</a> ajuda a começar, e o guia de <a href="../ia-para-automatizar-tarefas/">IA para automatizar tarefas</a> mostra onde estão os ganhos mais rápidos no dia a dia.</p>
+
+<h2 id="visao">O que isso antecipa para as empresas brasileiras em 2027?</h2>
+<p>A minha leitura é que o caso iFood marca a passagem da fase do encantamento para a fase da engenharia de custo em IA. Em 2025 e boa parte de 2026, a pergunta das diretorias era "qual IA usar?". A pergunta de 2027 vai ser "quanto custa cada resultado que a IA entrega, e qual modelo entrega esse resultado pelo menor preço com a qualidade necessária?".</p>
+<p>Para quem decide, a pergunta prática desta semana é simples: qual porcentagem dos tokens da sua empresa roda hoje no modelo mais caro, e quanto disso realmente precisa dele?</p>
+
+<h2 id="resumo">Resumo em uma frase</h2>
+<p>O iFood mostrou, com dados divulgados em novembro de 2026, que dá para multiplicar o uso de IA e ainda assim derrubar o custo ao adotar modelos open source como padrão, reservar os modelos premium para tarefas justificadas e com orçamento, e embutir governança e LGPD na própria infraestrutura, uma estratégia que qualquer empresa pode adaptar à sua escala.</p>
+<p>Se você quer montar essa estratégia com acompanhamento, conheça a <a href="../../trilha-ia.html">trilha de IA aplicada ao negócio</a>, a <a href="../../trilha-tecnologia.html">trilha de Tecnologia e Produtividade</a>, as <a href="../../mentoria.html">trilhas da mentoria</a>, os <a href="../../planos.html">planos e preços</a> ou leia mais <a href="../../sobre.html">sobre o meu trabalho</a>.</p>
+
+      <p>Para montar o contexto completo deste tema, leia também:</p>
+      <ul>
+        <li><a href="../comparativo-de-llms/">Comparativo prático de LLMs: quando usar Claude, ChatGPT, Gemini ou DeepSeek</a></li>
+        <li><a href="../ia-para-automatizar-tarefas/">Como usar IA para automatizar tarefas repetitivas e salvar 15 horas na sua semana</a></li>
+        <li><a href="../lgpd-para-pmes/">LGPD e privacidade em PMEs: como adequar seu negócio sem burocracia</a></li>
+      </ul>
+
+
+      <h2 id="faq">Perguntas frequentes (FAQ)</h2>
+      <div class="faq">
+        <details>
+          <summary>O que são modelos open source de IA?</summary>
+          <div class="a"><p>São modelos de IA cujos pesos treinados são publicados para download, o que permite rodá-los no próprio servidor, na nuvem escolhida ou por um provedor parceiro. Exemplos de famílias conhecidas são Llama, Qwen, DeepSeek, Mistral e Gemma, cada uma com licença própria que precisa ser lida antes do uso comercial.</p></div>
+        </details>
+        <details>
+          <summary>Como o iFood reduziu o custo de IA?</summary>
+          <div class="a"><p>Segundo a Mobile Time, o iFood adotou modelos open source como padrão e deixou os modelos premium para tarefas com justificativa e orçamento definido, sem limitar os tokens dos funcionários. Com isso, 8 em cada 10 tokens rodam em modelos abertos, o custo por token caiu 86% desde janeiro de 2026 e a conta caiu 51%.</p></div>
+        </details>
+        <details>
+          <summary>Modelos open source de IA são tão bons quanto os modelos fechados?</summary>
+          <div class="a"><p>Para tarefas de volume, como resumir, classificar, extrair dados e traduzir, muitas vezes a diferença de qualidade é pequena. Em raciocínio complexo e tarefas críticas, os modelos premium costumam levar vantagem, por isso o ideal é testar com exemplos reais e combinar os dois tipos.</p></div>
+        </details>
+        <details>
+          <summary>Usar modelos open source é seguro para a LGPD?</summary>
+          <div class="a"><p>Pode ser, desde que a empresa saiba onde o dado é processado, tenha contrato claro com o provedor e aplique regras de acesso e de dados pessoais na própria infraestrutura. Para dados muito sensíveis, rodar o modelo em servidor próprio dá o máximo de controle.</p></div>
+        </details>
+        <details>
+          <summary>Uma pequena empresa consegue aplicar a estratégia do iFood?</summary>
+          <div class="a"><p>Sim. O caminho é inventariar as ferramentas de IA, separar tarefas de volume das críticas, testar um modelo aberto via provedor nas tarefas de volume e criar uma regra simples de roteamento, com o modelo premium como exceção justificada.</p></div>
+        </details>
+      </div>
+
+      <aside class="author-box">
+        <img src="../../img/gui-hero.webp" alt="Guilherme Miranda, mentor de IA, marketing e tecnologia" width="88" height="88">
+        <div>
+          <h3>Escrito por Guilherme Miranda</h3>
+          <p>Mentor e consultor em tecnologia, IA e marketing digital. 27 anos fundando startups, mais de 1.200 sites e apps entregues e mais de 80 livros publicados na Amazon. Presencial em Ribeirão Preto e São Paulo, online em todo o Brasil.</p>
+          <div class="author-links">
+            <a href="../../sobre.html">Sobre o mentor</a>
+            <a href="https://www.linkedin.com/in/desenvolvimentodeaplicativos/" rel="noopener" target="_blank">LinkedIn</a>
+            <a href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+modelos+open+source+de+IA+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+IA+aplicada+ao+neg%C3%B3cio." rel="noopener" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL (obrigatorio em TODO artigo) ============ -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Use mais IA na sua empresa gastando menos</h2>
+      <p class="lead">Nas Mentorias Executivas (Essencial R$ 3.000 ou Advanced R$ 5.000, ou soluções sob medida), eu mapeio com você as tarefas de IA da empresa, escolho os modelos abertos e premium para cada uma, monto o roteamento, a governança e as regras de LGPD, e acompanho a implementação. Presencial em Ribeirão Preto e São Paulo ou online.</p>
+      <div class="cta-banner__btns">
+        <a class="btn btn-whats btn--lg" href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+modelos+open+source+de+IA+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+IA+aplicada+ao+neg%C3%B3cio." rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Quero falar com o Guilherme
+        </a>
+        <a class="btn btn-ghost btn--lg" href="../../planos.html">Ver planos e preços</a>
+      </div>
+    </div>
+    <p class="center mt-3"><a class="post-more" href="../">Ver todos os artigos do blog <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="../../index.html" aria-label="GuiMiranda.tech, página inicial">
+          <span class="brand__mark" aria-hidden="true">GM</span>
+          <span class="brand__name">GuiMiranda<small>.tech</small></span>
+        </a>
+        <p>Mentoria em IA, marketing digital, vendas, tecnologia e direito digital para empreendedores, empresários e profissionais liberais. Presencial em Ribeirão Preto e São Paulo e online em todo o Brasil.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="../../index.html">Início</a></li>
+          <li><a href="../../sobre.html">Sobre o mentor</a></li>
+          <li><a href="../../mentoria.html">Trilhas da mentoria</a></li>
+          <li><a href="../../empresas.html">Para empresas</a></li>
+          <li><a href="../../planos.html">Planos e preços</a></li>
+          <li><a href="../">Blog</a></li>
+          <li><a href="../../faq.html">Perguntas frequentes</a></li>
+          <li><a href="../../contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Trilhas</h4>
+        <ul>
+          <li><a href="../../trilha-ia.html">IA aplicada ao negócio</a></li>
+          <li><a href="../../trilha-marketing.html">Marketing e Vendas</a></li>
+          <li><a href="../../trilha-presenca.html">Presença Digital</a></li>
+          <li><a href="../../trilha-tecnologia.html">Tecnologia e Produtividade</a></li>
+          <li><a href="../../trilha-gestao.html">Gestão e Agilidade</a></li>
+          <li><a href="../../trilha-startups.html">Startups</a></li>
+          <li><a href="../../trilha-juridico.html">Jurídico e Direito Digital</a></li>
+          <li><a href="../../trilha-livros.html">Autoria e Livros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <div class="footer__nap">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Ribeirão Preto e São Paulo, SP, Brasil<br>Atendimento online em todo o país</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>WhatsApp: <a href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+modelos+open+source+de+IA+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+IA+aplicada+ao+neg%C3%B3cio." rel="noopener" target="_blank">(11) 96616-1611</a></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/desenvolvimentodeaplicativos/" rel="noopener" target="_blank">Guilherme Miranda no LinkedIn</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span class="ano">2026</span> Guilherme Miranda · Consultoria e Desenvolvimento em Tecnologia e Marketing Digital.</p>
+      <p>GuiMiranda.tech · <a href="../../index.html">Mentoria IA Ribeirão Preto</a> · <a href="../">Blog</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5511966161611?text=Ol%C3%A1%2C+Guilherme%21+Li+o+artigo+sobre+modelos+open+source+de+IA+no+blog+e+quero+saber+mais+sobre+a+mentoria+de+IA+aplicada+ao+neg%C3%B3cio." rel="noopener" target="_blank" aria-label="Falar com Guilherme Miranda no WhatsApp">
+  <span class="sr-wa">Comprar mentoria pelo WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>

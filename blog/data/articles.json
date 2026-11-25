@@ -1,5 +1,35 @@
 [
   {
+    "slug": "modelos-open-source-de-ia",
+    "url": "blog/modelos-open-source-de-ia/",
+    "date": "2026-11-25",
+    "updated": "2026-11-25",
+    "title": "Modelos open source de IA: como o iFood cortou o custo de tokens",
+    "description": "Modelos open source de IA já rodam 8 em cada 10 tokens do iFood e o custo por token caiu 86%. Veja como aplicar a mesma estratégia e reduzir o custo de IA.",
+    "category": "Tecnologia e Produtividade",
+    "tags": [
+      "modelos open source de ia",
+      "ia open source para empresas",
+      "como reduzir custo de ia",
+      "custo de tokens de ia",
+      "ifood modelos open source",
+      "modelos de pesos abertos",
+      "roteamento de modelos de ia",
+      "governança de ia e lgpd",
+      "llm open source empresa"
+    ],
+    "image": "img/blog/modelos-open-source-de-ia-hero.webp",
+    "og": "img/blog/og-modelos-open-source-de-ia.jpg",
+    "wordcount": 2479,
+    "readingtime": 12,
+    "trend": "hot",
+    "fontes": [
+      "Mobile Time (Isabel Butcher), 23/11/2026: https://www.mobiletime.com.br/noticias/23/11/2026/ifood-modelo-open-source/",
+      "Guia de TI (Jaime Linhares), 25/11/2026: https://guiadeti.com.br/noticias/modelos-open-source-concentram-tokens-ia-usados-ifood/",
+      "TI Inside (Bruno Lauterjung), 10/11/2026: https://tiinside.com.br/10/11/2026/ifood-reduz-em-90-custos-com-tokens-de-ia-revela-ceo-da-zoop/"
+    ]
+  },
+  {
     "slug": "google-agent-liberar-acesso",
     "url": "blog/google-agent-liberar-acesso/",
     "date": "2026-11-24",
