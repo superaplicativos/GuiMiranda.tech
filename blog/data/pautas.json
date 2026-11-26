@@ -64,5 +64,16 @@
     "status": "publicada",
     "slug": "modelos-open-source-de-ia",
     "publicada_em": "2026-11-25"
+  },
+  {
+    "id": "2026-11-26-meta-muse-instagram",
+    "adicionada_em": "2026-11-26",
+    "noticia": "Meta libera o agente de IA Muse no Direct do Instagram (24/11) nos EUA, Canadá, México, Japão e Singapura, e o Walmart conecta suas ofertas de Black Friday ao Muse",
+    "link": "https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/",
+    "observacao": "Angulo: o que o comércio agêntico no Instagram muda para quem vende pelo Direct no Brasil e como se preparar antes de o recurso chegar",
+    "origem": "agente",
+    "status": "publicada",
+    "slug": "agente-de-ia-no-instagram",
+    "publicada_em": "2026-11-26"
   }
 ]
