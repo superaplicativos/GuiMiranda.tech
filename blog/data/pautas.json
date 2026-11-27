@@ -75,5 +75,16 @@
     "status": "publicada",
     "slug": "agente-de-ia-no-instagram",
     "publicada_em": "2026-11-26"
+  },
+  {
+    "id": "2026-11-27-anthropic-api-rust",
+    "adicionada_em": "2026-11-27",
+    "noticia": "Anthropic conta como agentes Claude migraram a Messages API de Python para Rust (25/11): cerca de 70% menos CPU e mais de 80% menos memória por requisição, com o serviço antigo como gabarito e tráfego real espelhado",
+    "link": "https://thenextweb.com/news/anthropic-claude-messages-api-rust-migration",
+    "observacao": "Angulo: como empresas brasileiras podem migrar sistemas legados com IA usando verificação por comparação, testes protegidos e LGPD",
+    "origem": "agente",
+    "status": "publicada",
+    "slug": "migracao-de-sistemas-com-ia",
+    "publicada_em": "2026-11-27"
   }
 ]

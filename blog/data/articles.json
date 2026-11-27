@@ -1,5 +1,34 @@
 [
   {
+    "slug": "migracao-de-sistemas-com-ia",
+    "url": "blog/migracao-de-sistemas-com-ia/",
+    "date": "2026-11-27",
+    "updated": "2026-11-27",
+    "title": "Migração de sistemas com IA: a lição da Anthropic com Rust",
+    "description": "Migração de sistemas com IA: veja como a Anthropic usou agentes Claude para trocar Python por Rust, cortar 70% de CPU e o método para aplicar no seu legado.",
+    "category": "IA e Vibe Coding",
+    "tags": [
+      "migração de sistemas com ia",
+      "migração de sistema legado com ia",
+      "modernizar sistema legado com ia",
+      "anthropic messages api rust",
+      "agentes claude migração de código",
+      "reescrever sistema com ia",
+      "tráfego espelhado shadow traffic",
+      "vibe coding em sistemas legados"
+    ],
+    "image": "img/blog/migracao-de-sistemas-com-ia-hero.webp",
+    "og": "img/blog/og-migracao-de-sistemas-com-ia.jpg",
+    "wordcount": 2486,
+    "readingtime": 12,
+    "trend": "hot",
+    "fontes": [
+      "Anthropic, Migrating our Messages API to Rust, 25/11/2026: https://www.anthropic.com/research/migrating-api-to-rust",
+      "The Next Web (Ana Maria Constantin), 25/11/2026: https://thenextweb.com/news/anthropic-claude-messages-api-rust-migration",
+      "Unite.AI, 25/11/2026: https://www.unite.ai/anthropic-details-claude-assisted-rust-migration-of-messages-api/"
+    ]
+  },
+  {
     "slug": "agente-de-ia-no-instagram",
     "url": "blog/agente-de-ia-no-instagram/",
     "date": "2026-11-26",

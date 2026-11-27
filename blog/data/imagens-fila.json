@@ -1,5 +1,13 @@
 [
   {
+    "slug": "migracao-de-sistemas-com-ia",
+    "prompt": "Cinematic wide shot inside a vast futuristic server hall at night, an old monolithic machine made of dark weathered metal and tangled glowing cables on the left slowly dissolving into a sleek crystalline architecture of violet and cyan light on the right, two identical streams of luminous data flowing in parallel through both structures and being compared by small swarms of glowing robotic drones, a lone engineer silhouette watching from a catwalk with a holographic tablet, volumetric fog, dramatic rim lighting, reflective floor, sense of precision and transformation, ultra detailed, photorealistic, no text, no letters, no numbers, no logos, no brand marks",
+    "og_titulo": "Migração de sistemas com IA",
+    "og_sub": "A lição da Anthropic ao trocar Python por Rust",
+    "status": "pendente",
+    "tentativas": 0
+  },
+  {
     "slug": "agente-de-ia-no-instagram",
     "prompt": "Cinematic wide shot of a futuristic social media storefront floating in a neon digital city at night, a glowing humanoid AI assistant made of violet and cyan light standing inside a giant smartphone chat window, sorting floating product cards, recipe and travel photos into luminous folders and assembling a glowing shopping cart for a person holding a phone in the foreground, rain-slick reflective street, volumetric fog, dramatic rim lighting, shallow depth of field, ultra detailed, photorealistic, no text, no letters, no numbers, no logos, no brand marks",
     "og_titulo": "Agente de IA no Instagram",
