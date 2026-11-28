@@ -1,5 +1,41 @@
 [
   {
+    "slug": "marco-legal-da-ia-empresas",
+    "url": "blog/marco-legal-da-ia-empresas/",
+    "date": "2026-11-28",
+    "updated": "2026-11-28",
+    "title": "Marco legal da IA: o que muda para empresas antes da votação",
+    "description": "Marco legal da IA: veja em que pé está o PL 2338 na Câmara, o que o texto exige das empresas, as multas de até R$ 50 milhões e como preparar sua empresa já.",
+    "category": "Juridico, LGPD e Direito Digital",
+    "tags": [
+      "marco legal da ia",
+      "pl 2338",
+      "regulamentação da inteligência artificial no brasil",
+      "lei de ia para empresas",
+      "marco legal da ia multas",
+      "ia de alto risco",
+      "aguinaldo ribeiro relator ia",
+      "governança de ia para pmes"
+    ],
+    "image": "img/blog/marco-legal-da-ia-empresas-hero.webp",
+    "og": "img/blog/og-marco-legal-da-ia-empresas.jpg",
+    "wordcount": 2517,
+    "readingtime": 13,
+    "trend": "hot",
+    "fontes": [
+      "ND Mais (Guilherme Xavier), 27/11/2026: https://ndmais.com.br/politica/big-techs-novas-regras-regulacao-digital-lula-google-meta-streaming-ia/",
+      "Brasil 247, citando CNN Brasil, 27/11/2026: https://www.brasil247.com/brasil/governo-lula-intensifica-articulacao-para-aprovar-pacote-de-regulacao-digital-em-2026/",
+      "Teletime, 27/11/2026: https://teletime.com.br/27/11/2026/projetos-avancam-na-reta-final-do-ano-legislativo/",
+      "Guia de TI, 26/11/2026: https://guiadeti.com.br/noticias/parlamentares-incluir-ciberseguranca-marco-legal-ia/",
+      "Jornal Brasil em Folhas, 11/11/2026: https://brasilemfolhas.com.br/2026/11/relator-de-projeto-sobre-ia-propoe-reduzir-papel-da-anpd/",
+      "Brasil 247, 11/11/2026: https://www.brasil247.com/brasilia/relator-detalha-modelo-de-governanca-vivo-para-o-marco-legal-da-inteligencia-artificial/",
+      "Agência Senado, 05/12/2024: https://www12.senado.leg.br/noticias/materias/2024/12/05/comissao-chega-a-consenso-e-regulamentacao-da-inteligencia-artificial-vai-a-plenario",
+      "Brasil de Fato, 10/12/2024: https://www.brasildefato.com.br/2024/12/10/senado-aprova-pl-da-inteligencia-artificial",
+      "ComputerWeekly Brasil: https://www.computerweekly.com/br/reportagen/Senado-aprova-projeto-de-lei-de-inteligencia-artificial-no-Brasil",
+      "Monitor Legislativo LCF Consulting, PL 2338/2023: https://monitor.lcfconsulting.com.br/proposicoes/pl-2338-2023/"
+    ]
+  },
+  {
     "slug": "migracao-de-sistemas-com-ia",
     "url": "blog/migracao-de-sistemas-com-ia/",
     "date": "2026-11-27",

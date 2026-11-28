@@ -86,5 +86,16 @@
     "status": "publicada",
     "slug": "migracao-de-sistemas-com-ia",
     "publicada_em": "2026-11-27"
+  },
+  {
+    "id": "2026-11-28-marco-legal-da-ia",
+    "adicionada_em": "2026-11-28",
+    "noticia": "Governo quer votar o marco legal da IA (PL 2338/2023) antes do recesso de 23/12, no pacote de regulação digital (ND Mais e Brasil 247/CNN, 27/11); relator Aguinaldo Ribeiro ainda não apresentou parecer e a data segue indefinida (Teletime, 27/11)",
+    "link": "https://ndmais.com.br/politica/big-techs-novas-regras-regulacao-digital-lula-google-meta-streaming-ia/",
+    "observacao": "Angulo: o que o texto já aprovado no Senado exige das empresas, o que pode mudar na Câmara, multas, prazos e plano de preparação",
+    "origem": "agente",
+    "status": "publicada",
+    "slug": "marco-legal-da-ia-empresas",
+    "publicada_em": "2026-11-28"
   }
 ]
