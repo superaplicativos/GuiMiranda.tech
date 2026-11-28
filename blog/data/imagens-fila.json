@@ -4,8 +4,9 @@
     "prompt": "Cinematic wide shot of a vast futuristic parliament chamber at night, curved rows of empty seats bathed in deep violet light, at the center a colossal floating balance scale made of glowing cyan light, one pan holding a luminous translucent digital brain made of circuits, the other pan holding a stack of glowing ancient law books, thin beams of light connecting the scale to the ceiling dome, volumetric fog, dramatic rim lighting, reflective marble floor, sense of weight and decision, ultra detailed, photorealistic, no text, no letters, no numbers, no logos, no flags, no brand marks",
     "og_titulo": "Marco legal da IA",
     "og_sub": "O que muda para empresas antes da votação",
-    "status": "pendente",
-    "tentativas": 0
+    "status": "gerada",
+    "tentativas": 1,
+    "gerada_em": "2026-11-28T06:04:14-03:00"
   },
   {
     "slug": "migracao-de-sistemas-com-ia",
